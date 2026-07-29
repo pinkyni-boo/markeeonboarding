@@ -173,9 +173,14 @@ export const OnboardingTable = React.memo(({ items, isLoading, isFetching, onRef
                     ))}
                   </div>
                   <div className="mt-1 pt-3 border-t border-slate-100 flex items-center justify-between">
-                    <div className="text-xs text-slate-500 flex items-center gap-1.5">
+                    <div className="text-xs text-slate-500 flex items-center gap-1.5 w-32">
                       <span className="text-slate-400">Phụ trách:</span>
-                      <span className="font-medium text-slate-700">{sub.admin_meta?.assigneeName || 'Chưa có'}</span>
+                      <div className="flex-1">
+                        <AssigneeSelect 
+                          id={sub.id} 
+                          initialAssignee={sub.admin_meta?.assignee} 
+                        />
+                      </div>
                     </div>
                     <div className="text-xs text-slate-400">
                       {format(new Date(sub.createdAt), 'dd/MM/yyyy')}
