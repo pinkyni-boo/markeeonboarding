@@ -54,7 +54,11 @@ export const OnboardingTable = React.memo(({ items, isLoading, isFetching, onRef
                   </td>
                 </tr>
               ) : items.length === 0 ? (
-                <AdminEmptyState />
+                <tr>
+                  <td colSpan={9}>
+                    <AdminEmptyState />
+                  </td>
+                </tr>
               ) : (
                 items.map((sub: OnboardingSubmission) => {
                   const companyName = sub.data.company?.name || 'Khách hàng chưa đặt tên';
