@@ -1,0 +1,108 @@
+[
+  {
+    "id": "sub_ms5yvota_ee6iihs",
+    "data": {
+      "staff": [
+        {
+          "id": "154131ec-45cf-456c-89aa-1088aacca183",
+          "name": "t",
+          "role": "Admin",
+          "email": "tucontact@gmail.com",
+          "product": "markeeChat",
+          "channels": ""
+        },
+        {
+          "id": "24503eb7-e8a2-4733-a717-6aea6bfe456a",
+          "name": "t",
+          "role": "Admin",
+          "email": "tttavucontact@gmail.com",
+          "product": "markeeChat",
+          "channels": ""
+        }
+      ],
+      "review": {
+        "confirmed": true
+      },
+      "company": {
+        "name": "meo",
+        "brand": "meo",
+        "email": "niorravucontact@gmail.com",
+        "phone": "0909561743",
+        "website": "",
+        "contactName": "thảo"
+      },
+      "productData": {
+        "markeeChat": {
+          "channels": {
+            "chat": [
+              "facebookMessenger"
+            ],
+            "sales": [
+              "shopee"
+            ]
+          },
+          "channelDetails": {
+            "chat": {
+              "facebookMessenger": {
+                "pageLink": "meo.com",
+                "pageName": "meo",
+                "adminName": "thảo",
+                "hasAdminAccess": "yes"
+              }
+            },
+            "sales": {
+              "shopee": {
+                "shopId": "t",
+                "shopLink": "t",
+                "shopName": "t",
+                "managerName": "t"
+              }
+            }
+          }
+        }
+      },
+      "additionalNotes": "eee",
+      "selectedProducts": [
+        "markeeChat"
+      ],
+      "deploymentSchedule": {
+        "note": "",
+        "participants": "e",
+        "specificTime": "18:54",
+        "preferredDate": "2026-08-01",
+        "supportMethods": [
+          "googleMeet"
+        ],
+        "preferredTimeSlot": "specific"
+      }
+    },
+    "status": "completed",
+    "productStatuses": {},
+    "admin_meta": {
+      "priority": "normal",
+      "assignee": "member_1",
+      "activities": [
+        {
+          "id": "1785326208780",
+          "type": "assigned",
+          "author": "Hệ thống / Admin",
+          "content": "Đã phân công yêu cầu cho: Nguyễn Văn Admin",
+          "createdAt": "2026-07-29T11:56:48.780Z"
+        }
+      ],
+      "checklist": {
+        "received": true,
+        "access": true,
+        "connected": true,
+        "tested": true,
+        "accounts_created": true,
+        "trained": true,
+        "handed_over": true
+      },
+      "startDate": "2026-07-29",
+      "completedDate": "2026-07-29"
+    },
+    "createdAt": "2026-07-29T10:53:51.838+00:00",
+    "updatedAt": "2026-07-29T12:07:30.357Z"
+  }
+]

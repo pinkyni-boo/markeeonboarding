@@ -1,0 +1,24 @@
+[
+  {
+    "id": "member_1",
+    "fullName": "Nguyễn Văn Admin",
+    "email": "admin@markee.vn",
+    "role": "admin",
+    "department": "dev",
+    "status": "active",
+    "canReceiveOnboarding": true,
+    "createdAt": "2026-07-29T03:59:55.877Z",
+    "updatedAt": "2026-07-29T03:59:55.877Z"
+  },
+  {
+    "id": "member_2",
+    "fullName": "Trần Thị Sales",
+    "email": "sales@markee.vn",
+    "role": "sales",
+    "department": "sales",
+    "status": "active",
+    "canReceiveOnboarding": true,
+    "createdAt": "2026-07-29T03:59:55.877Z",
+    "updatedAt": "2026-07-29T03:59:55.877Z"
+  }
+]

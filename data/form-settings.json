@@ -1,0 +1,26 @@
+{
+  "markee_chat": {
+    "isActive": true,
+    "title": "Đăng ký Markee Chat",
+    "description": "Vui lòng cung cấp thông tin để chúng tôi tích hợp giải pháp Chatbot.",
+    "steps": 3,
+    "fields": 15,
+    "lastUpdated": "2026-07-29T11:58:28.232Z"
+  },
+  "markee_seeding": {
+    "isActive": false,
+    "title": "Đăng ký Markee Seeding",
+    "description": "Chưa cấu hình",
+    "steps": 0,
+    "fields": 0,
+    "lastUpdated": null
+  },
+  "markee_app": {
+    "isActive": false,
+    "title": "Đăng ký Markee App",
+    "description": "Chưa cấu hình",
+    "steps": 0,
+    "fields": 0,
+    "lastUpdated": null
+  }
+}

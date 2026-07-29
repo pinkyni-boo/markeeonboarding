@@ -1,0 +1,14 @@
+{
+  "systemName": "Markee Onboarding",
+  "displayName": "Admin Portal",
+  "supportEmail": "support@markee.vn",
+  "supportPhone": "1900 xxxx",
+  "contactLink": "https://markee.vn/contact",
+  "defaultStatus": "new",
+  "defaultPriority": "normal",
+  "warningDays": 3,
+  "allowDraft": true,
+  "introDuration": 5,
+  "autoSave": true,
+  "emailNotifications": true
+}

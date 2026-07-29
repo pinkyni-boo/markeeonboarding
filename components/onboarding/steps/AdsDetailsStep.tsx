@@ -1,0 +1,79 @@
+import React from 'react';
+import { useFormContext } from 'react-hook-form';
+import { FormField } from '../FormField';
+import { OnboardingFormValues } from '@/lib/onboarding/schema';
+
+const CardWrapper: React.FC<{ title: string, children: React.ReactNode }> = ({ title, children }) => (
+  <div className="bg-white border border-border-color rounded-2xl p-5 mb-6 shadow-sm">
+    <h3 className="text-lg font-semibold text-primary mb-4 pb-2 border-b border-border-color flex items-center gap-2">
+      <div className="w-2 h-2 rounded-full bg-primary" />
+      {title}
+    </h3>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {children}
+    </div>
+  </div>
+);
+
+export const AdsDetailsStep: React.FC = () => {
+  const { register, watch } = useFormContext<OnboardingFormValues>();
+  const selectedAds = watch('productData.markeeChat.channels.ads') || [];
+
+  return (
+    <div className="animate-in fade-in slide-in-from-right-4 duration-300">
+      <h2 className="text-xl font-semibold text-foreground mb-6">Thông tin kênh Quảng cáo</h2>
+      
+      {selectedAds.includes('metaAds') && (
+        <CardWrapper title="Meta Ads (Facebook/Instagram)">
+          <FormField label="Tên Business Manager" required {...register('productData.markeeChat.channelDetails.ads.metaAds.bmName')} />
+          <FormField label="Business Manager ID" required {...register('productData.markeeChat.channelDetails.ads.metaAds.bmId')} />
+          <FormField label="Tên tài khoản quảng cáo" required {...register('productData.markeeChat.channelDetails.ads.metaAds.adAccountName')} />
+          <FormField label="Ad Account ID" required {...register('productData.markeeChat.channelDetails.ads.metaAds.adAccountId')} />
+          <div className="md:col-span-2">
+            <FormField label="Người quản lý" {...register('productData.markeeChat.channelDetails.ads.metaAds.managerName')} />
+          </div>
+        </CardWrapper>
+      )}
+
+      {selectedAds.includes('googleAds') && (
+        <CardWrapper title="Google Ads">
+          <FormField label="Tên tài khoản" required {...register('productData.markeeChat.channelDetails.ads.googleAds.accountName')} />
+          <FormField label="Customer ID" required {...register('productData.markeeChat.channelDetails.ads.googleAds.customerId')} />
+          <div className="md:col-span-2">
+            <FormField label="Người quản lý" {...register('productData.markeeChat.channelDetails.ads.googleAds.managerName')} />
+          </div>
+        </CardWrapper>
+      )}
+
+      {selectedAds.includes('tiktokAds') && (
+        <CardWrapper title="TikTok Ads">
+          <FormField label="Tên tài khoản quảng cáo" required {...register('productData.markeeChat.channelDetails.ads.tiktokAds.accountName')} />
+          <FormField label="Advertiser ID" required {...register('productData.markeeChat.channelDetails.ads.tiktokAds.advertiserId')} />
+          <div className="md:col-span-2">
+            <FormField label="Người quản lý" {...register('productData.markeeChat.channelDetails.ads.tiktokAds.managerName')} />
+          </div>
+        </CardWrapper>
+      )}
+
+      {selectedAds.includes('shopeeAds') && (
+        <CardWrapper title="Shopee Ads">
+          <FormField label="Tên Shop" required {...register('productData.markeeChat.channelDetails.ads.shopeeAds.shopName')} />
+          <FormField label="Shop ID" required {...register('productData.markeeChat.channelDetails.ads.shopeeAds.shopId')} />
+          <div className="md:col-span-2">
+            <FormField label="Người quản lý quảng cáo" {...register('productData.markeeChat.channelDetails.ads.shopeeAds.managerName')} />
+          </div>
+        </CardWrapper>
+      )}
+
+      {selectedAds.includes('zaloAds') && (
+        <CardWrapper title="Zalo Ads">
+          <FormField label="Tên tài khoản" required {...register('productData.markeeChat.channelDetails.ads.zaloAds.accountName')} />
+          <FormField label="Account ID" required {...register('productData.markeeChat.channelDetails.ads.zaloAds.accountId')} />
+          <div className="md:col-span-2">
+            <FormField label="Người quản lý" {...register('productData.markeeChat.channelDetails.ads.zaloAds.managerName')} />
+          </div>
+        </CardWrapper>
+      )}
+    </div>
+  );
+};
