@@ -23,8 +23,8 @@ export const ProgressSidebar: React.FC<ProgressSidebarProps> = ({ currentStepInd
     <div className="w-full shrink-0">
       <div className={twMerge(
         clsx(
-          "bg-white/80 backdrop-blur-sm border border-border-color rounded-2xl shadow-sm sticky top-8 flex flex-col",
-          isMobile ? "p-4" : "p-6"
+          "bg-white/95 backdrop-blur-sm border border-border-color rounded-2xl shadow-sm flex flex-col",
+          !isMobile ? "sticky top-8 p-6" : "p-4 relative z-30"
         )
       )}>
         {!isMobile && (
