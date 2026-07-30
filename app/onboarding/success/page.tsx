@@ -13,7 +13,7 @@ function SuccessContent() {
   }, [searchParams]);
 
   return (
-    <div className="bg-card border border-border-color rounded-2xl p-8 lg:p-12 shadow-sm max-w-2xl mx-auto text-center animate-in fade-in zoom-in-95 duration-500">
+    <div className="bg-card border border-border-color rounded-2xl p-8 lg:p-12 shadow-sm max-w-xl mx-auto text-center animate-in fade-in zoom-in-95 duration-500">
       <div className="flex justify-center mb-6">
         <div className="h-20 w-20 bg-green-50 rounded-full flex items-center justify-center">
           <CheckCircle2 className="h-10 w-10 text-green-500" />
@@ -36,36 +36,36 @@ function SuccessContent() {
 
       <div className="text-left bg-slate-50 border border-slate-200 rounded-xl p-6 mb-10 w-full max-w-md mx-auto">
         <h3 className="font-semibold text-foreground mb-6">Việc tiếp theo</h3>
-        <div className="space-y-6 relative before:absolute before:inset-0 before:ml-2.5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
-          <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-            <div className="flex items-center justify-center w-6 h-6 rounded-full border border-white bg-green-500 text-slate-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+        <div className="space-y-4 relative before:absolute before:inset-0 before:ml-3 before:-translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
+          <div className="relative flex items-center group">
+            <div className="flex items-center justify-center w-6 h-6 rounded-full border border-white bg-green-500 text-slate-50 shadow shrink-0 z-10">
               <CheckCircle2 className="w-4 h-4 text-white" />
             </div>
-            <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.5rem)] ml-3 md:ml-0 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
+            <div className="flex-1 ml-4 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
               <span className="text-sm font-semibold text-foreground">1. Đã nhận yêu cầu</span>
             </div>
           </div>
-          <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-            <div className="flex items-center justify-center w-6 h-6 rounded-full border border-slate-200 bg-slate-100 text-slate-500 shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+          <div className="relative flex items-center group">
+            <div className="flex items-center justify-center w-6 h-6 rounded-full border border-slate-200 bg-slate-100 text-slate-500 shadow-sm shrink-0 z-10">
               <span className="text-xs font-medium">2</span>
             </div>
-            <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.5rem)] ml-3 md:ml-0 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
+            <div className="flex-1 ml-4 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
               <span className="text-sm font-medium text-foreground">⏳ Kiểm tra thông tin</span>
             </div>
           </div>
-          <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-            <div className="flex items-center justify-center w-6 h-6 rounded-full border border-slate-200 bg-slate-100 text-slate-500 shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+          <div className="relative flex items-center group">
+            <div className="flex items-center justify-center w-6 h-6 rounded-full border border-slate-200 bg-slate-100 text-slate-500 shadow-sm shrink-0 z-10">
               <span className="text-xs font-medium">3</span>
             </div>
-            <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.5rem)] ml-3 md:ml-0 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
+            <div className="flex-1 ml-4 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
               <span className="text-sm font-medium text-foreground">📞 Liên hệ xác nhận</span>
             </div>
           </div>
-          <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-            <div className="flex items-center justify-center w-6 h-6 rounded-full border border-slate-200 bg-slate-100 text-slate-500 shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+          <div className="relative flex items-center group">
+            <div className="flex items-center justify-center w-6 h-6 rounded-full border border-slate-200 bg-slate-100 text-slate-500 shadow-sm shrink-0 z-10">
               <span className="text-xs font-medium">4</span>
             </div>
-            <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.5rem)] ml-3 md:ml-0 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
+            <div className="flex-1 ml-4 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
               <span className="text-sm font-medium text-foreground">🚀 Bắt đầu triển khai</span>
             </div>
           </div>
