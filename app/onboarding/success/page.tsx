@@ -106,7 +106,7 @@ function SuccessContent() {
       </div>
 
       <p className="mt-8 text-sm text-text-muted">
-        Nếu cần hỗ trợ gấp, vui lòng liên hệ hotline <span className="font-semibold text-foreground">0765 055 708</span> hoặc mở <span className="font-semibold text-foreground">Markee AI</span>.
+        Nếu cần hỗ trợ gấp, vui lòng liên hệ hotline <span className="font-semibold text-foreground">0765 055 708</span> hoặc mở <span className="font-semibold text-foreground whitespace-nowrap">Markee AI</span>.
       </p>
     </div>
   );
