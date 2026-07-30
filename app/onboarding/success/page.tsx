@@ -32,13 +32,36 @@ function SuccessContent() {
         </div>
       )}
 
-      <div>
+      <div className="flex flex-col items-center gap-3">
+        <a 
+          href="https://chat.markeeai.com/app/login" 
+          target="_blank"
+          rel="noreferrer"
+          className="w-full sm:w-auto inline-flex justify-center items-center space-x-2 bg-primary text-white px-8 py-3 rounded-xl font-medium hover:bg-primary-dark transition-colors shadow-sm"
+        >
+          <span>Truy cập Markee Chat</span>
+          <ArrowRight className="w-5 h-5" />
+        </a>
+        
+        <button 
+          onClick={(e) => {
+            e.preventDefault();
+            if (typeof window !== 'undefined' && (window as any).MarkeeChat) {
+              (window as any).MarkeeChat.open();
+            } else {
+              alert('Tính năng Live Chat đang được kết nối...');
+            }
+          }}
+          className="w-full sm:w-auto inline-flex justify-center items-center space-x-2 bg-white text-primary border border-primary/20 px-8 py-3 rounded-xl font-medium hover:bg-slate-50 transition-colors shadow-sm"
+        >
+          <span>Liên hệ hỗ trợ</span>
+        </button>
+
         <a 
           href="/onboarding" 
-          className="inline-flex items-center space-x-2 bg-primary text-white px-8 py-3 rounded-xl font-medium hover:bg-primary-hover transition-colors shadow-sm"
+          className="mt-4 text-sm text-text-muted hover:text-primary transition-colors underline-offset-4 hover:underline"
         >
-          <span>Trở về trang chủ Onboarding</span>
-          <ArrowRight className="w-5 h-5" />
+          Quay lại trang chủ
         </a>
       </div>
     </div>
