@@ -62,8 +62,10 @@ export const saveSubmission = async (submission: OnboardingSubmission): Promise<
 
     fs.writeFileSync(DATA_FILE, JSON.stringify(submissions, null, 2));
   } catch (e) {
-    if (!supabaseSuccess) throw e;
-    console.error('Local backup write failed (Supabase already succeeded):', e);
+    console.error('Local backup write failed (read-only filesystem?):', e);
+    if (!hasSupabase) {
+      console.error('Supabase is not configured either — this submission was not persisted anywhere.');
+    }
   }
 };
 
@@ -185,8 +187,10 @@ export const updateSubmission = async (id: string, updates: Partial<OnboardingSu
 
     fs.writeFileSync(DATA_FILE, JSON.stringify(localSubmissions, null, 2));
   } catch (e) {
-    if (!supabaseSuccess) throw e;
-    console.error('Local backup write failed (Supabase already succeeded):', e);
+    console.error('Local backup write failed (read-only filesystem?):', e);
+    if (!hasSupabase) {
+      console.error('Supabase is not configured either — this update was not persisted anywhere.');
+    }
   }
 };
 
@@ -219,7 +223,9 @@ export const deleteSubmission = async (id: string): Promise<void> => {
     const filtered = localSubmissions.filter(s => s.id !== id);
     fs.writeFileSync(DATA_FILE, JSON.stringify(filtered, null, 2));
   } catch (e) {
-    if (!supabaseSuccess) throw e;
-    console.error('Local backup write failed (Supabase already succeeded):', e);
+    console.error('Local backup write failed (read-only filesystem?):', e);
+    if (!hasSupabase) {
+      console.error('Supabase is not configured either — this delete was not persisted anywhere.');
+    }
   }
 };
