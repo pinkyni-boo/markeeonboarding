@@ -1,6 +1,7 @@
 import React from 'react';
 import { ProgressSidebar, StepDefinition } from './ProgressSidebar';
-import { HelpCircle, ShieldCheck } from 'lucide-react';
+import { openMarkeeChat } from '@/lib/onboarding/chat';
+import { ShieldCheck } from 'lucide-react';
 
 interface OnboardingLayoutProps {
   children: React.ReactNode;
@@ -31,20 +32,21 @@ export const OnboardingLayout: React.FC<OnboardingLayoutProps> = ({ children, cu
                 <p className="text-xs text-text-muted">Cần hỗ trợ?</p>
                 <p className="text-sm font-semibold text-foreground">0765 055 708</p>
               </div>
-              <div className="w-10 h-10 rounded-full bg-slate-100 overflow-hidden border border-border-color">
-                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=MarkeeSupport&backgroundColor=f8fafc" alt="Support Bot" className="w-full h-full object-cover p-1" />
-              </div>
+              <button
+                type="button"
+                onClick={openMarkeeChat}
+                aria-label="Chat với Pip"
+                className="group relative w-10 h-10 rounded-full bg-slate-100 overflow-hidden border border-border-color hover:border-primary/40 transition-colors"
+              >
+                <img src="/img/mascot/pip-96.png" alt="Pip - Trợ lý Markee" className="w-full h-full object-contain p-0.5" />
+                <span className="pointer-events-none absolute right-0 top-full mt-2 whitespace-nowrap rounded-lg bg-foreground text-white text-xs px-2.5 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
+                  Chat với Pip 👋
+                </span>
+              </button>
             </div>
-            
-            <button 
-              onClick={(e) => {
-                e.preventDefault();
-                if (typeof window !== 'undefined' && (window as any).MarkeeChat) {
-                  (window as any).MarkeeChat.open();
-                } else {
-                  alert('Tính năng Live Chat đang được kết nối...');
-                }
-              }}
+
+            <button
+              onClick={openMarkeeChat}
               className="text-xs md:text-sm font-medium text-white bg-primary hover:bg-primary-dark transition-colors px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg shadow-sm flex items-center gap-2"
             >
               <span className="hidden md:inline">Chat với Markee AI</span>

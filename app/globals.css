@@ -50,3 +50,38 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #D1D5DB;
 }
+
+/* Mascot idle animation */
+@keyframes mascot-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(-2deg); }
+}
+
+.animate-mascot-float {
+  animation: mascot-float 3.2s ease-in-out infinite;
+}
+
+/* Comic-style speech bubble tails */
+.speech-bubble-tail-top::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 8px 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent var(--card) transparent;
+  filter: drop-shadow(0 -1px 0 var(--border));
+}
+
+.speech-bubble-tail-left::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  transform: translateY(-50%);
+  border-width: 8px 8px 8px 0;
+  border-style: solid;
+  border-color: transparent var(--card) transparent transparent;
+  filter: drop-shadow(-1px 0 0 var(--border));
+}

@@ -51,10 +51,16 @@ export const CompanyStep: React.FC = () => {
           >
             <option value="">Chọn kênh...</option>
             <option value="Zalo">Zalo</option>
+            <option value="Facebook Messenger">Facebook Messenger</option>
             <option value="Telegram">Telegram</option>
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Viber">Viber</option>
+            <option value="WeChat">WeChat</option>
+            <option value="Line">Line</option>
+            <option value="Skype">Skype</option>
+            <option value="Instagram">Instagram</option>
             <option value="Phone">Điện thoại</option>
             <option value="Email">Email</option>
-            <option value="Khác">Khác</option>
           </select>
           {errors.company?.contactChannel?.message && (
             <p className="mt-[-0.5rem] mb-4 text-sm text-red-500">{errors.company.contactChannel.message}</p>

@@ -1,7 +1,9 @@
 import React from 'react';
-import { Check, Headset } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { openMarkeeChat } from '@/lib/onboarding/chat';
+import { PipMascot } from './PipMascot';
 
 export interface StepDefinition {
   id: string;
@@ -16,6 +18,7 @@ interface ProgressSidebarProps {
 }
 
 export const ProgressSidebar: React.FC<ProgressSidebarProps> = ({ currentStepIndex, steps, isMobile = false }) => {
+  const currentStepId = steps[currentStepIndex]?.id;
   const displayStep = Math.max(0, currentStepIndex - 1);
   const progressPercent = Math.round((currentStepIndex / Math.max(1, steps.length - 1)) * 100);
 
@@ -40,12 +43,18 @@ export const ProgressSidebar: React.FC<ProgressSidebarProps> = ({ currentStepInd
             </div>
           </div>
           <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
-            <div 
+            <div
               className="h-full bg-primary transition-all duration-500 ease-out rounded-full"
               style={{ width: `${Math.min(100, Math.max(0, progressPercent))}%` }}
             />
           </div>
         </div>
+
+        {isMobile && (
+          <div className="mt-4">
+            <PipMascot stepId={currentStepId} compact />
+          </div>
+        )}
 
         {!isMobile && (
           <div className="space-y-1 flex-1">
@@ -104,24 +113,14 @@ export const ProgressSidebar: React.FC<ProgressSidebarProps> = ({ currentStepInd
           </div>
         )}
 
-        {/* Support block */}
+        {/* Mascot + support block */}
         {!isMobile && (
-          <div className="mt-10 p-4 rounded-xl bg-slate-50 border border-border-color">
-            <div className="flex items-center gap-2 mb-2 text-primary">
-              <Headset className="w-5 h-5" />
-              <h4 className="font-semibold text-sm">Cần hỗ trợ?</h4>
-            </div>
-            <p className="text-xs text-text-muted mb-4">
-              Đội ngũ Markee luôn sẵn sàng hỗ trợ bạn trong quá trình thiết lập.
-            </p>
-            <button 
+          <div className="mt-10 space-y-3">
+            <PipMascot stepId={currentStepId} />
+            <button
               onClick={(e) => {
                 e.preventDefault();
-                if (typeof window !== 'undefined' && (window as any).MarkeeChat) {
-                  (window as any).MarkeeChat.open();
-                } else {
-                  alert('Tính năng Live Chat đang được kết nối...');
-                }
+                openMarkeeChat();
               }}
               className="block w-full text-center py-2 px-4 rounded-lg border border-primary/20 text-primary bg-white text-sm font-medium hover:bg-primary-light transition-colors"
             >

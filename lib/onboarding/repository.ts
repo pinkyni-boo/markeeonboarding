@@ -45,22 +45,26 @@ export const saveSubmission = async (submission: OnboardingSubmission): Promise<
     }
   } 
   
-  // Always save locally as backup or if Supabase failed/disabled
-  ensureDataFileExists();
-  const fileContent = fs.readFileSync(DATA_FILE, 'utf-8');
-  const submissions: OnboardingSubmission[] = JSON.parse(fileContent || '[]');
-  
-  // Prevent duplicates
-  const existingIdx = submissions.findIndex(s => s.id === submission.id);
-  if (existingIdx !== -1) {
-    submissions[existingIdx] = submission;
-  } else {
-    submissions.push(submission);
+  // Best-effort local backup. Read-only filesystems (e.g. Vercel) will fail here;
+  // that must not fail the request when Supabase already has the record.
+  try {
+    ensureDataFileExists();
+    const fileContent = fs.readFileSync(DATA_FILE, 'utf-8');
+    const submissions: OnboardingSubmission[] = JSON.parse(fileContent || '[]');
+
+    // Prevent duplicates
+    const existingIdx = submissions.findIndex(s => s.id === submission.id);
+    if (existingIdx !== -1) {
+      submissions[existingIdx] = submission;
+    } else {
+      submissions.push(submission);
+    }
+
+    fs.writeFileSync(DATA_FILE, JSON.stringify(submissions, null, 2));
+  } catch (e) {
+    if (!supabaseSuccess) throw e;
+    console.error('Local backup write failed (Supabase already succeeded):', e);
   }
-  
-  fs.writeFileSync(DATA_FILE, JSON.stringify(submissions, null, 2));
-  
-  // If we require Supabase to work and it didn't, but we saved locally, we can log it.
 };
 
 export const getSubmissions = async (): Promise<OnboardingSubmission[]> => {
@@ -142,16 +146,22 @@ export const updateSubmission = async (id: string, updates: Partial<OnboardingSu
     }
   } 
 
-  // Always update locally as backup or if Supabase failed/disabled
-  ensureDataFileExists();
-  
   // Fetch from the combined source so we don't fail if it's only in Supabase
   let allSubmissions = await getSubmissions();
   const existing = allSubmissions.find(s => s.id === id);
-  
-  if (existing) {
+
+  if (!existing) {
+    console.error('Local update failed: Submission not found in any storage.');
+    if (!supabaseSuccess) throw new Error('Submission not found in any storage.');
+    return;
+  }
+
+  // Best-effort local backup; must not fail the request if Supabase already succeeded.
+  try {
+    ensureDataFileExists();
+
     // Deep merge admin_meta if present
-    const newAdminMeta = updates.admin_meta 
+    const newAdminMeta = updates.admin_meta
       ? { ...(existing.admin_meta || {}), ...updates.admin_meta }
       : existing.admin_meta;
 
@@ -161,44 +171,55 @@ export const updateSubmission = async (id: string, updates: Partial<OnboardingSu
       admin_meta: newAdminMeta,
       updatedAt: new Date().toISOString()
     };
-    
+
     // Read local file just to write back the merged result
     const fileContent = fs.readFileSync(DATA_FILE, 'utf-8');
     const localSubmissions: OnboardingSubmission[] = JSON.parse(fileContent || '[]');
-    
+
     const index = localSubmissions.findIndex(s => s.id === id);
     if (index !== -1) {
       localSubmissions[index] = updatedSubmission;
     } else {
       localSubmissions.push(updatedSubmission);
     }
-    
+
     fs.writeFileSync(DATA_FILE, JSON.stringify(localSubmissions, null, 2));
-  } else {
-    console.error('Local update failed: Submission not found in any storage.');
+  } catch (e) {
+    if (!supabaseSuccess) throw e;
+    console.error('Local backup write failed (Supabase already succeeded):', e);
   }
 };
 
 export const deleteSubmission = async (id: string): Promise<void> => {
+  let supabaseSuccess = false;
+
   if (hasSupabase) {
     try {
       const { error } = await supabase
         .from('onboarding_submissions')
         .delete()
         .eq('id', id);
-        
+
       if (error) {
         console.error('Supabase delete error (falling back to local):', error);
+      } else {
+        supabaseSuccess = true;
       }
     } catch (e) {
       console.error('Supabase connection error (falling back to local):', e);
     }
   }
 
-  ensureDataFileExists();
-  const fileContent = fs.readFileSync(DATA_FILE, 'utf-8');
-  const localSubmissions: OnboardingSubmission[] = JSON.parse(fileContent || '[]');
-  
-  const filtered = localSubmissions.filter(s => s.id !== id);
-  fs.writeFileSync(DATA_FILE, JSON.stringify(filtered, null, 2));
+  // Best-effort local backup; must not fail the request if Supabase already succeeded.
+  try {
+    ensureDataFileExists();
+    const fileContent = fs.readFileSync(DATA_FILE, 'utf-8');
+    const localSubmissions: OnboardingSubmission[] = JSON.parse(fileContent || '[]');
+
+    const filtered = localSubmissions.filter(s => s.id !== id);
+    fs.writeFileSync(DATA_FILE, JSON.stringify(filtered, null, 2));
+  } catch (e) {
+    if (!supabaseSuccess) throw e;
+    console.error('Local backup write failed (Supabase already succeeded):', e);
+  }
 };
