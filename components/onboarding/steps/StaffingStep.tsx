@@ -32,7 +32,7 @@ export const StaffingStep: React.FC = () => {
         </div>
         <button
           type="button"
-          onClick={() => append({ id: crypto.randomUUID(), name: '', email: '', role: 'Sale', product: selectedProducts[0] || '', channels: '' })}
+          onClick={() => append({ id: Math.random().toString(36).substring(2, 9), name: '', email: '', role: 'Sale', product: selectedProducts[0] || '', channels: '' })}
           className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-2 bg-primary text-white hover:bg-primary-hover rounded-lg text-sm font-medium transition-colors whitespace-nowrap shrink-0 shadow-sm"
         >
           <Plus className="w-4 h-4" />
@@ -58,7 +58,7 @@ export const StaffingStep: React.FC = () => {
             <p className="text-slate-500 mb-4">Bạn chưa thêm nhân sự nào. Có thể bấm <strong>Bỏ qua / Tiếp tục</strong> để sang bước sau.</p>
             <button
               type="button"
-              onClick={() => append({ id: crypto.randomUUID(), name: '', email: '', role: 'Admin', product: selectedProducts[0] || '', channels: '' })}
+              onClick={() => append({ id: Math.random().toString(36).substring(2, 9), name: '', email: '', role: 'Admin', product: selectedProducts[0] || '', channels: '' })}
               className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg text-sm font-medium transition-colors shadow-sm"
             >
               <Plus className="w-4 h-4" />

@@ -6,7 +6,7 @@ export const companySchema = z.object({
   contactChannel: z.string().min(1, 'Vui lòng chọn kênh liên hệ'),
   contactId: z.string().min(1, 'Vui lòng nhập thông tin liên hệ'),
   email: z.string().email('Email không đúng định dạng').min(1, 'Vui lòng nhập email'),
-  phone: z.string().min(1, 'Vui lòng nhập số điện thoại'),
+  phone: z.string().optional(),
   website: z.string().optional(),
 });
 

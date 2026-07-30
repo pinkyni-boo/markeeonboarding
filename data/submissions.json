@@ -503,5 +503,57 @@
     "status": "new",
     "createdAt": "2026-07-30T10:21:05.769Z",
     "updatedAt": "2026-07-30T10:21:05.769Z"
+  },
+  {
+    "id": "sub_ms7eb1zt_54e3ubb",
+    "data": {
+      "company": {
+        "name": "Meo",
+        "contactName": "Thảo",
+        "contactChannel": "Telegram",
+        "contactId": "0909561743",
+        "email": "a@gmail.com",
+        "phone": "0909561743",
+        "website": ""
+      },
+      "selectedProducts": [
+        "markeeChat"
+      ],
+      "productData": {
+        "markeeChat": {
+          "channels": {
+            "chat": [
+              "facebookMessenger"
+            ]
+          },
+          "channelDetails": {
+            "chat": {
+              "facebookMessenger": {
+                "pageName": "Meo",
+                "pageLink": "",
+                "adminName": ""
+              }
+            }
+          }
+        }
+      },
+      "staff": [],
+      "deploymentSchedule": {
+        "supportMethods": [
+          "googleMeet"
+        ],
+        "preferredDate": "2026-08-15",
+        "preferredTimeSlot": "afternoon",
+        "participants": "Thảo",
+        "note": ""
+      },
+      "additionalNotes": "",
+      "review": {
+        "confirmed": true
+      }
+    },
+    "status": "new",
+    "createdAt": "2026-07-30T10:53:29.177Z",
+    "updatedAt": "2026-07-30T10:53:29.177Z"
   }
 ]

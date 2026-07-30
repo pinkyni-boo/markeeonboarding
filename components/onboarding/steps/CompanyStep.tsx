@@ -71,8 +71,7 @@ export const CompanyStep: React.FC = () => {
 
         <FormField
           label="Số điện thoại dự phòng"
-          placeholder="0901234567"
-          required
+          placeholder="0912..."
           {...register('company.phone')}
           error={errors.company?.phone?.message}
         />

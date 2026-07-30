@@ -29,7 +29,7 @@ export async function POST(request: Request) {
         requestCode: `ONB-${new Date().getFullYear()}-${submission.id.substring(4, 9).toUpperCase()}`,
         companyName: validatedData.company.name,
         contactName: validatedData.company.contactName,
-        phone: validatedData.company.phone,
+        phone: validatedData.company.phone || '',
         email: validatedData.company.email,
         products: validatedData.selectedProducts,
         channels: [validatedData.company.contactChannel],

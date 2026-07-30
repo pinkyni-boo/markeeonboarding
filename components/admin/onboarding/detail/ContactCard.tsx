@@ -64,7 +64,7 @@ export const ContactCard = ({ company }: { company: OnboardingData['company'] })
             </div>
             <div className="flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
               <button 
-                onClick={() => navigator.clipboard.writeText(company.phone)} 
+                onClick={() => navigator.clipboard.writeText(company.phone || '')} 
                 className="p-1.5 text-slate-400 hover:text-primary transition-colors"
                 title="Copy số điện thoại"
               >
