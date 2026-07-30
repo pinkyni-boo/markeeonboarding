@@ -22,20 +22,20 @@ export const SelectableCard: React.FC<SelectableCardProps> = ({
       onClick={onClick}
       className={twMerge(
         clsx(
-          'relative flex cursor-pointer rounded-[14px] border p-4 shadow-sm transition-all duration-200 focus:outline-none',
+          'relative flex cursor-pointer rounded-xl md:rounded-[14px] border p-3 md:p-4 shadow-sm transition-all duration-200 focus:outline-none',
           selected
             ? 'border-primary bg-primary-light ring-1 ring-primary'
             : 'border-border-color bg-card hover:bg-slate-50 hover:border-slate-300'
         )
       )}
     >
-      <div className="flex w-full items-center justify-between">
+      <div className="flex w-full items-center justify-between gap-2">
         <div className="flex items-center">
-          <div className="text-sm">
+          <div className="text-xs md:text-sm">
             <p
               className={twMerge(
                 clsx(
-                  'font-medium',
+                  'font-medium leading-tight md:leading-normal',
                   selected ? 'text-primary' : 'text-foreground'
                 )
               )}

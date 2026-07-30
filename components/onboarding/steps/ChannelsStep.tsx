@@ -8,21 +8,21 @@ const CollapsibleSection: React.FC<{
   title: string;
   name: "productData.markeeChat.channels.chat" | "productData.markeeChat.channels.sales" | "productData.markeeChat.channels.ads";
   options: { id: string; label: string }[];
-  defaultOpen?: boolean;
-}> = ({ title, name, options, defaultOpen = true }) => {
-  const [isOpen, setIsOpen] = React.useState(defaultOpen);
+  isOpen: boolean;
+  onToggle: () => void;
+}> = ({ title, name, options, isOpen, onToggle }) => {
   const { control } = useFormContext<OnboardingFormValues>();
 
   return (
-    <div className="mb-6 border border-border-color rounded-2xl overflow-hidden bg-white">
+    <div className="mb-4 md:mb-6 border border-border-color rounded-2xl overflow-hidden bg-white">
       <button
         type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-4 bg-slate-50/50 hover:bg-slate-50 transition-colors"
+        onClick={onToggle}
+        className="w-full flex items-center justify-between p-3.5 md:p-4 bg-slate-50/50 hover:bg-slate-50 transition-colors"
       >
-        <h3 className="text-base font-semibold text-foreground">{title}</h3>
+        <h3 className="text-sm md:text-base font-semibold text-foreground">{title}</h3>
         <svg 
-          className={`w-5 h-5 text-slate-400 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
+          className={`w-4 h-4 md:w-5 md:h-5 text-slate-400 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
@@ -32,12 +32,12 @@ const CollapsibleSection: React.FC<{
       </button>
       
       {isOpen && (
-        <div className="p-4 border-t border-border-color">
+        <div className="p-3 md:p-4 border-t border-border-color">
           <Controller
             name={name}
             control={control}
             render={({ field }) => (
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 md:gap-3">
                 {options.map((opt) => (
                   <SelectableCard
                     key={opt.id}
@@ -63,6 +63,7 @@ const CollapsibleSection: React.FC<{
 
 export const ChannelsStep: React.FC = () => {
   const { formState: { errors } } = useFormContext<OnboardingFormValues>();
+  const [openSection, setOpenSection] = React.useState<string>('chat');
 
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-300">
@@ -75,9 +76,27 @@ export const ChannelsStep: React.FC = () => {
         </div>
       )}
 
-      <CollapsibleSection title="Nhóm 1 – Kênh Chat" name="productData.markeeChat.channels.chat" options={chatChannelOptions} />
-      <CollapsibleSection title="Nhóm 2 – Kênh Bán Hàng" name="productData.markeeChat.channels.sales" options={salesChannelOptions} />
-      <CollapsibleSection title="Nhóm 3 – Kênh Quảng Cáo" name="productData.markeeChat.channels.ads" options={adsChannelOptions} />
+      <CollapsibleSection 
+        title="Nhóm 1 – Kênh Chat" 
+        name="productData.markeeChat.channels.chat" 
+        options={chatChannelOptions} 
+        isOpen={openSection === 'chat'}
+        onToggle={() => setOpenSection(openSection === 'chat' ? '' : 'chat')}
+      />
+      <CollapsibleSection 
+        title="Nhóm 2 – Kênh Bán Hàng" 
+        name="productData.markeeChat.channels.sales" 
+        options={salesChannelOptions} 
+        isOpen={openSection === 'sales'}
+        onToggle={() => setOpenSection(openSection === 'sales' ? '' : 'sales')}
+      />
+      <CollapsibleSection 
+        title="Nhóm 3 – Kênh Quảng Cáo" 
+        name="productData.markeeChat.channels.ads" 
+        options={adsChannelOptions} 
+        isOpen={openSection === 'ads'}
+        onToggle={() => setOpenSection(openSection === 'ads' ? '' : 'ads')}
+      />
     </div>
   );
 };

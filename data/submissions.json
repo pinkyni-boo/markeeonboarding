@@ -157,5 +157,53 @@
     "status": "new",
     "createdAt": "2026-07-30T08:35:43.911Z",
     "updatedAt": "2026-07-30T08:35:43.911Z"
+  },
+  {
+    "id": "sub_ms79zkyq_ugouu18",
+    "data": {
+      "company": {
+        "name": "N",
+        "brand": "",
+        "contactName": "H",
+        "email": "n@gmail.com",
+        "phone": "H",
+        "website": ""
+      },
+      "selectedProducts": [
+        "markeeChat"
+      ],
+      "productData": {
+        "markeeChat": {
+          "channels": {
+            "chat": [
+              "whatsapp"
+            ]
+          },
+          "channelDetails": {
+            "chat": {
+              "whatsapp": {
+                "businessName": "H",
+                "phone": "H",
+                "adminName": ""
+              }
+            }
+          }
+        }
+      },
+      "staff": [],
+      "deploymentSchedule": {
+        "preferredDate": "2026-07-31",
+        "preferredTimeSlot": "",
+        "participants": "",
+        "note": ""
+      },
+      "additionalNotes": "",
+      "review": {
+        "confirmed": true
+      }
+    },
+    "status": "new",
+    "createdAt": "2026-07-30T08:52:35.426Z",
+    "updatedAt": "2026-07-30T08:52:35.426Z"
   }
 ]
