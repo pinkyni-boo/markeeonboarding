@@ -77,21 +77,21 @@ export const ChannelsStep: React.FC = () => {
       )}
 
       <CollapsibleSection 
-        title="Nhóm 1 – Kênh Chat" 
+        title="Kênh Chat" 
         name="productData.markeeChat.channels.chat" 
         options={chatChannelOptions} 
         isOpen={openSection === 'chat'}
         onToggle={() => setOpenSection(openSection === 'chat' ? '' : 'chat')}
       />
       <CollapsibleSection 
-        title="Nhóm 2 – Kênh Bán Hàng" 
+        title="Kênh Bán Hàng" 
         name="productData.markeeChat.channels.sales" 
         options={salesChannelOptions} 
         isOpen={openSection === 'sales'}
         onToggle={() => setOpenSection(openSection === 'sales' ? '' : 'sales')}
       />
       <CollapsibleSection 
-        title="Nhóm 3 – Kênh Quảng Cáo" 
+        title="Kênh Quảng Cáo" 
         name="productData.markeeChat.channels.ads" 
         options={adsChannelOptions} 
         isOpen={openSection === 'ads'}

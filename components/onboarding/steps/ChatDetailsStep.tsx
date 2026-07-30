@@ -27,8 +27,8 @@ export const ChatDetailsStep: React.FC = () => {
       
       {selectedChat.includes('facebookMessenger') && (
         <CardWrapper title="Facebook Messenger">
-          <FormField label="Tên Fanpage" required {...register('productData.markeeChat.channelDetails.chat.facebookMessenger.pageName')} error={errs?.facebookMessenger?.pageName?.message} />
-          <FormField label="Link Fanpage" required {...register('productData.markeeChat.channelDetails.chat.facebookMessenger.pageLink')} error={errs?.facebookMessenger?.pageLink?.message} />
+          <FormField label="Tên Fanpage" {...register('productData.markeeChat.channelDetails.chat.facebookMessenger.pageName')} error={errs?.facebookMessenger?.pageName?.message} />
+          <FormField label="Link Fanpage" {...register('productData.markeeChat.channelDetails.chat.facebookMessenger.pageLink')} error={errs?.facebookMessenger?.pageLink?.message} />
           <FormField label="Người giữ quyền Admin" {...register('productData.markeeChat.channelDetails.chat.facebookMessenger.adminName')} error={errs?.facebookMessenger?.adminName?.message} />
           <div className="mb-5">
             <label className="block text-sm font-medium text-foreground mb-2">Hiện có quyền Admin hay không?</label>
@@ -47,8 +47,8 @@ export const ChatDetailsStep: React.FC = () => {
 
       {selectedChat.includes('instagram') && (
         <CardWrapper title="Instagram">
-          <FormField label="Tên tài khoản Instagram" required {...register('productData.markeeChat.channelDetails.chat.instagram.accountName')} error={errs?.instagram?.accountName?.message} />
-          <FormField label="Link tài khoản" required {...register('productData.markeeChat.channelDetails.chat.instagram.accountLink')} error={errs?.instagram?.accountLink?.message} />
+          <FormField label="Tên tài khoản Instagram" {...register('productData.markeeChat.channelDetails.chat.instagram.accountName')} error={errs?.instagram?.accountName?.message} />
+          <FormField label="Link tài khoản" {...register('productData.markeeChat.channelDetails.chat.instagram.accountLink')} error={errs?.instagram?.accountLink?.message} />
           <FormField label="Người quản lý tài khoản" {...register('productData.markeeChat.channelDetails.chat.instagram.managerName')} error={errs?.instagram?.managerName?.message} />
           <div className="mb-5">
             <label className="block text-sm font-medium text-foreground mb-2">Đã liên kết với Fanpage chưa?</label>
@@ -67,8 +67,8 @@ export const ChatDetailsStep: React.FC = () => {
 
       {selectedChat.includes('zaloOA') && (
         <CardWrapper title="Zalo OA">
-          <FormField label="Tên Zalo OA" required {...register('productData.markeeChat.channelDetails.chat.zaloOA.oaName')} error={errs?.zaloOA?.oaName?.message} />
-          <FormField label="OA ID" required {...register('productData.markeeChat.channelDetails.chat.zaloOA.oaId')} error={errs?.zaloOA?.oaId?.message} />
+          <FormField label="Tên Zalo OA" {...register('productData.markeeChat.channelDetails.chat.zaloOA.oaName')} error={errs?.zaloOA?.oaName?.message} />
+          <FormField label="OA ID" {...register('productData.markeeChat.channelDetails.chat.zaloOA.oaId')} error={errs?.zaloOA?.oaId?.message} />
           <FormField label="Người quản trị" {...register('productData.markeeChat.channelDetails.chat.zaloOA.adminName')} error={errs?.zaloOA?.adminName?.message} />
           <FormField label="Số điện thoại quản trị" {...register('productData.markeeChat.channelDetails.chat.zaloOA.adminPhone')} error={errs?.zaloOA?.adminPhone?.message} />
         </CardWrapper>
@@ -76,8 +76,8 @@ export const ChatDetailsStep: React.FC = () => {
 
       {selectedChat.includes('zaloPersonal') && (
         <CardWrapper title="Zalo Cá Nhân">
-          <FormField label="Tên tài khoản" required {...register('productData.markeeChat.channelDetails.chat.zaloPersonal.accountName')} error={errs?.zaloPersonal?.accountName?.message} />
-          <FormField label="Số điện thoại" required {...register('productData.markeeChat.channelDetails.chat.zaloPersonal.phone')} error={errs?.zaloPersonal?.phone?.message} />
+          <FormField label="Tên tài khoản" {...register('productData.markeeChat.channelDetails.chat.zaloPersonal.accountName')} error={errs?.zaloPersonal?.accountName?.message} />
+          <FormField label="Số điện thoại" {...register('productData.markeeChat.channelDetails.chat.zaloPersonal.phone')} error={errs?.zaloPersonal?.phone?.message} />
           <div className="md:col-span-2">
             <FormField label="Người sử dụng chính" {...register('productData.markeeChat.channelDetails.chat.zaloPersonal.mainUser')} error={errs?.zaloPersonal?.mainUser?.message} />
           </div>
@@ -86,8 +86,8 @@ export const ChatDetailsStep: React.FC = () => {
 
       {selectedChat.includes('telegram') && (
         <CardWrapper title="Telegram">
-          <FormField label="Tên bot hoặc group" required {...register('productData.markeeChat.channelDetails.chat.telegram.botOrGroupName')} error={errs?.telegram?.botOrGroupName?.message} />
-          <FormField label="Link bot hoặc group" required {...register('productData.markeeChat.channelDetails.chat.telegram.link')} error={errs?.telegram?.link?.message} />
+          <FormField label="Tên bot hoặc group" {...register('productData.markeeChat.channelDetails.chat.telegram.botOrGroupName')} error={errs?.telegram?.botOrGroupName?.message} />
+          <FormField label="Link bot hoặc group" {...register('productData.markeeChat.channelDetails.chat.telegram.link')} error={errs?.telegram?.link?.message} />
           <div className="md:col-span-2">
             <FormField label="Người quản trị" {...register('productData.markeeChat.channelDetails.chat.telegram.adminName')} error={errs?.telegram?.adminName?.message} />
           </div>
@@ -96,8 +96,8 @@ export const ChatDetailsStep: React.FC = () => {
 
       {selectedChat.includes('whatsapp') && (
         <CardWrapper title="WhatsApp">
-          <FormField label="Tên tài khoản doanh nghiệp" required {...register('productData.markeeChat.channelDetails.chat.whatsapp.businessName')} error={errs?.whatsapp?.businessName?.message} />
-          <FormField label="Số điện thoại" required {...register('productData.markeeChat.channelDetails.chat.whatsapp.phone')} error={errs?.whatsapp?.phone?.message} />
+          <FormField label="Tên tài khoản doanh nghiệp" {...register('productData.markeeChat.channelDetails.chat.whatsapp.businessName')} error={errs?.whatsapp?.businessName?.message} />
+          <FormField label="Số điện thoại" {...register('productData.markeeChat.channelDetails.chat.whatsapp.phone')} error={errs?.whatsapp?.phone?.message} />
           <div className="md:col-span-2">
             <FormField label="Người quản trị" {...register('productData.markeeChat.channelDetails.chat.whatsapp.adminName')} error={errs?.whatsapp?.adminName?.message} />
           </div>
@@ -106,8 +106,8 @@ export const ChatDetailsStep: React.FC = () => {
 
       {selectedChat.includes('websiteLiveChat') && (
         <CardWrapper title="Website Live Chat">
-          <FormField label="Domain website" required {...register('productData.markeeChat.channelDetails.chat.websiteLiveChat.domain')} error={errs?.websiteLiveChat?.domain?.message} />
-          <FormField label="Nền tảng website (VD: WordPress, Haravan...)" required {...register('productData.markeeChat.channelDetails.chat.websiteLiveChat.platform')} error={errs?.websiteLiveChat?.platform?.message} />
+          <FormField label="Domain website" {...register('productData.markeeChat.channelDetails.chat.websiteLiveChat.domain')} error={errs?.websiteLiveChat?.domain?.message} />
+          <FormField label="Nền tảng website (VD: WordPress, Haravan...)" {...register('productData.markeeChat.channelDetails.chat.websiteLiveChat.platform')} error={errs?.websiteLiveChat?.platform?.message} />
           <div className="md:col-span-2">
             <FormField label="Người quản trị website" {...register('productData.markeeChat.channelDetails.chat.websiteLiveChat.adminName')} error={errs?.websiteLiveChat?.adminName?.message} />
           </div>
@@ -116,8 +116,8 @@ export const ChatDetailsStep: React.FC = () => {
 
       {selectedChat.includes('airbnb') && (
         <CardWrapper title="Airbnb">
-          <FormField label="Tên tài khoản / cơ sở lưu trú" required {...register('productData.markeeChat.channelDetails.chat.airbnb.accountName')} error={errs?.airbnb?.accountName?.message} />
-          <FormField label="Link trang Airbnb" required {...register('productData.markeeChat.channelDetails.chat.airbnb.link')} error={errs?.airbnb?.link?.message} />
+          <FormField label="Tên tài khoản / cơ sở lưu trú" {...register('productData.markeeChat.channelDetails.chat.airbnb.accountName')} error={errs?.airbnb?.accountName?.message} />
+          <FormField label="Link trang Airbnb" {...register('productData.markeeChat.channelDetails.chat.airbnb.link')} error={errs?.airbnb?.link?.message} />
           <div className="md:col-span-2">
             <FormField label="Người quản lý" {...register('productData.markeeChat.channelDetails.chat.airbnb.managerName')} error={errs?.airbnb?.managerName?.message} />
           </div>

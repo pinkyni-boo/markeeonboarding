@@ -33,11 +33,11 @@ export const ProgressSidebar: React.FC<ProgressSidebarProps> = ({ currentStepInd
         
         {/* Progress Bar */}
         <div className={!isMobile ? "mb-8" : ""}>
-          <div className="flex justify-between text-sm mb-2">
-            <span className="text-text-muted">Hoàn thành</span>
-            <span className="font-semibold text-primary">{Math.min(100, Math.max(0, progressPercent))}%</span>
+          <div className="flex justify-between items-center text-sm mb-3">
+            <span className="text-text-muted font-medium">Tiến độ thiết lập</span>
+            <span className="font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full text-xs">Bước {Math.min(steps.length - 1, Math.max(1, currentStepIndex))} / {steps.length - 1}</span>
           </div>
-          <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+          <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
             <div 
               className="h-full bg-primary transition-all duration-500 ease-out rounded-full"
               style={{ width: `${Math.min(100, Math.max(0, progressPercent))}%` }}

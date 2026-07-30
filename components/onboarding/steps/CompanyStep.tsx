@@ -25,7 +25,12 @@ export const CompanyStep: React.FC = () => {
           error={errors.company?.name?.message}
         />
         <FormField
-          label="Tên thương hiệu"
+          label={
+            <div className="flex items-center gap-2">
+              <span>Tên thương hiệu</span>
+              <span className="text-[10px] font-semibold bg-slate-100 text-slate-500 uppercase tracking-wider px-1.5 py-0.5 rounded">Optional</span>
+            </div>
+          }
           placeholder="Ví dụ: Markee"
           {...register('company.brand')}
           error={errors.company?.brand?.message}
@@ -60,7 +65,12 @@ export const CompanyStep: React.FC = () => {
           error={errors.company?.email?.message}
         />
         <FormField
-          label="Website"
+          label={
+            <div className="flex items-center gap-2">
+              <span>Website</span>
+              <span className="text-[10px] font-semibold bg-slate-100 text-slate-500 uppercase tracking-wider px-1.5 py-0.5 rounded">Optional</span>
+            </div>
+          }
           placeholder="https://markee.com"
           {...register('company.website')}
           error={errors.company?.website?.message}

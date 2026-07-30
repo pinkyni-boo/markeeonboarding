@@ -11,10 +11,11 @@ export const TimelineStep: React.FC = () => {
 
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-      <div>
-        <h2 className="text-xl font-semibold text-foreground mb-1">Thời gian triển khai <span className="text-sm font-normal text-slate-500">(Không bắt buộc)</span></h2>
-        <p className="text-slate-500 text-sm mb-6">Bạn có thể cung cấp lịch hẹn cụ thể để Markee tiện sắp xếp, hoặc bấm Bỏ qua để thiết lập sau.</p>
-      </div>
+      <h2 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
+        Thời gian dự kiến
+        <span className="text-[10px] font-semibold bg-slate-100 text-slate-500 uppercase tracking-wider px-1.5 py-0.5 rounded">Optional</span>
+      </h2>
+      <p className="text-text-muted mb-8">Cho chúng tôi biết thời gian phù hợp để liên hệ hoặc bắt đầu triển khai.</p>
       
       <div className="mb-8">
         <h3 className="text-lg font-medium text-foreground mb-4">Hình thức hỗ trợ mong muốn (có thể chọn nhiều)</h3>

@@ -2,8 +2,8 @@ import React, { forwardRef } from 'react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
-interface FormFieldProps extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
-  label: string;
+interface FormFieldProps extends Omit<React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>, 'label'> {
+  label: string | React.ReactNode;
   error?: string;
   as?: 'input' | 'textarea';
 }

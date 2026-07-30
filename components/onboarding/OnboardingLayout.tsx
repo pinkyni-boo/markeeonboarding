@@ -25,7 +25,17 @@ export const OnboardingLayout: React.FC<OnboardingLayoutProps> = ({ children, cu
             <span className="hidden md:inline-block text-sm text-text-muted border-l border-border-color pl-4 ml-2">Thiết lập thông tin triển khai</span>
           </div>
           
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 md:gap-6">
+            <div className="hidden lg:flex items-center gap-3 mr-2">
+              <div className="text-right">
+                <p className="text-xs text-text-muted">Cần hỗ trợ?</p>
+                <p className="text-sm font-semibold text-foreground">090.123.4567</p>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-slate-100 overflow-hidden border border-border-color">
+                <img src="https://ui-avatars.com/api/?name=Support&background=0D8ABC&color=fff" alt="Support" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            
             <button 
               onClick={(e) => {
                 e.preventDefault();
@@ -37,7 +47,7 @@ export const OnboardingLayout: React.FC<OnboardingLayoutProps> = ({ children, cu
               }}
               className="text-xs md:text-sm font-medium text-white bg-primary hover:bg-primary-dark transition-colors px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg shadow-sm flex items-center gap-2"
             >
-              Liên hệ Markee
+              Chat với bot
             </button>
           </div>
         </div>
@@ -63,8 +73,8 @@ export const OnboardingLayout: React.FC<OnboardingLayoutProps> = ({ children, cu
             </div>
 
             {/* Secure watermark */}
-            <div className="mt-8 flex items-center justify-center gap-2 text-text-muted text-sm pb-8">
-              <ShieldCheck className="w-4 h-4" />
+            <div className="mt-5 flex items-center justify-center gap-1.5 text-slate-400 text-xs pb-8">
+              <ShieldCheck className="w-3.5 h-3.5" />
               <span>Thông tin của bạn được bảo mật tuyệt đối</span>
             </div>
           </div>

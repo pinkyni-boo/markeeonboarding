@@ -27,10 +27,10 @@ export const AdsDetailsStep: React.FC = () => {
       
       {selectedAds.includes('metaAds') && (
         <CardWrapper title="Meta Ads (Facebook/Instagram)">
-          <FormField label="Tên Business Manager" required {...register('productData.markeeChat.channelDetails.ads.metaAds.bmName')} error={errs?.metaAds?.bmName?.message} />
-          <FormField label="Business Manager ID" required {...register('productData.markeeChat.channelDetails.ads.metaAds.bmId')} error={errs?.metaAds?.bmId?.message} />
-          <FormField label="Tên tài khoản quảng cáo" required {...register('productData.markeeChat.channelDetails.ads.metaAds.adAccountName')} error={errs?.metaAds?.adAccountName?.message} />
-          <FormField label="Ad Account ID" required {...register('productData.markeeChat.channelDetails.ads.metaAds.adAccountId')} error={errs?.metaAds?.adAccountId?.message} />
+          <FormField label="Tên Business Manager" {...register('productData.markeeChat.channelDetails.ads.metaAds.bmName')} error={errs?.metaAds?.bmName?.message} />
+          <FormField label="Business Manager ID" {...register('productData.markeeChat.channelDetails.ads.metaAds.bmId')} error={errs?.metaAds?.bmId?.message} />
+          <FormField label="Tên tài khoản quảng cáo" {...register('productData.markeeChat.channelDetails.ads.metaAds.adAccountName')} error={errs?.metaAds?.adAccountName?.message} />
+          <FormField label="Ad Account ID" {...register('productData.markeeChat.channelDetails.ads.metaAds.adAccountId')} error={errs?.metaAds?.adAccountId?.message} />
           <div className="md:col-span-2">
             <FormField label="Người quản lý" {...register('productData.markeeChat.channelDetails.ads.metaAds.managerName')} error={errs?.metaAds?.managerName?.message} />
           </div>
@@ -39,8 +39,8 @@ export const AdsDetailsStep: React.FC = () => {
 
       {selectedAds.includes('googleAds') && (
         <CardWrapper title="Google Ads">
-          <FormField label="Tên tài khoản" required {...register('productData.markeeChat.channelDetails.ads.googleAds.accountName')} error={errs?.googleAds?.accountName?.message} />
-          <FormField label="Customer ID" required {...register('productData.markeeChat.channelDetails.ads.googleAds.customerId')} error={errs?.googleAds?.customerId?.message} />
+          <FormField label="Tên tài khoản" {...register('productData.markeeChat.channelDetails.ads.googleAds.accountName')} error={errs?.googleAds?.accountName?.message} />
+          <FormField label="Customer ID" {...register('productData.markeeChat.channelDetails.ads.googleAds.customerId')} error={errs?.googleAds?.customerId?.message} />
           <div className="md:col-span-2">
             <FormField label="Người quản lý" {...register('productData.markeeChat.channelDetails.ads.googleAds.managerName')} error={errs?.googleAds?.managerName?.message} />
           </div>
@@ -49,8 +49,8 @@ export const AdsDetailsStep: React.FC = () => {
 
       {selectedAds.includes('tiktokAds') && (
         <CardWrapper title="TikTok Ads">
-          <FormField label="Tên tài khoản quảng cáo" required {...register('productData.markeeChat.channelDetails.ads.tiktokAds.accountName')} error={errs?.tiktokAds?.accountName?.message} />
-          <FormField label="Advertiser ID" required {...register('productData.markeeChat.channelDetails.ads.tiktokAds.advertiserId')} error={errs?.tiktokAds?.advertiserId?.message} />
+          <FormField label="Tên tài khoản quảng cáo" {...register('productData.markeeChat.channelDetails.ads.tiktokAds.accountName')} error={errs?.tiktokAds?.accountName?.message} />
+          <FormField label="Advertiser ID" {...register('productData.markeeChat.channelDetails.ads.tiktokAds.advertiserId')} error={errs?.tiktokAds?.advertiserId?.message} />
           <div className="md:col-span-2">
             <FormField label="Người quản lý" {...register('productData.markeeChat.channelDetails.ads.tiktokAds.managerName')} error={errs?.tiktokAds?.managerName?.message} />
           </div>
@@ -59,8 +59,8 @@ export const AdsDetailsStep: React.FC = () => {
 
       {selectedAds.includes('shopeeAds') && (
         <CardWrapper title="Shopee Ads">
-          <FormField label="Tên Shop" required {...register('productData.markeeChat.channelDetails.ads.shopeeAds.shopName')} error={errs?.shopeeAds?.shopName?.message} />
-          <FormField label="Shop ID" required {...register('productData.markeeChat.channelDetails.ads.shopeeAds.shopId')} error={errs?.shopeeAds?.shopId?.message} />
+          <FormField label="Tên Shop" {...register('productData.markeeChat.channelDetails.ads.shopeeAds.shopName')} error={errs?.shopeeAds?.shopName?.message} />
+          <FormField label="Shop ID" {...register('productData.markeeChat.channelDetails.ads.shopeeAds.shopId')} error={errs?.shopeeAds?.shopId?.message} />
           <div className="md:col-span-2">
             <FormField label="Người quản lý quảng cáo" {...register('productData.markeeChat.channelDetails.ads.shopeeAds.managerName')} error={errs?.shopeeAds?.managerName?.message} />
           </div>
@@ -69,8 +69,8 @@ export const AdsDetailsStep: React.FC = () => {
 
       {selectedAds.includes('zaloAds') && (
         <CardWrapper title="Zalo Ads">
-          <FormField label="Tên tài khoản" required {...register('productData.markeeChat.channelDetails.ads.zaloAds.accountName')} error={errs?.zaloAds?.accountName?.message} />
-          <FormField label="Account ID" required {...register('productData.markeeChat.channelDetails.ads.zaloAds.accountId')} error={errs?.zaloAds?.accountId?.message} />
+          <FormField label="Tên tài khoản" {...register('productData.markeeChat.channelDetails.ads.zaloAds.accountName')} error={errs?.zaloAds?.accountName?.message} />
+          <FormField label="Account ID" {...register('productData.markeeChat.channelDetails.ads.zaloAds.accountId')} error={errs?.zaloAds?.accountId?.message} />
           <div className="md:col-span-2">
             <FormField label="Người quản lý" {...register('productData.markeeChat.channelDetails.ads.zaloAds.managerName')} error={errs?.zaloAds?.managerName?.message} />
           </div>

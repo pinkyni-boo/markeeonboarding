@@ -27,35 +27,35 @@ export const SalesDetailsStep: React.FC = () => {
       
       {selectedSales.includes('shopee') && (
         <CardWrapper title="Shopee">
-          <FormField label="Tên Shop" required {...register('productData.markeeChat.channelDetails.sales.shopee.shopName')} error={errs?.shopee?.shopName?.message} />
-          <FormField label="Link Shop" required {...register('productData.markeeChat.channelDetails.sales.shopee.shopLink')} error={errs?.shopee?.shopLink?.message} />
-          <FormField label="Shop ID" required {...register('productData.markeeChat.channelDetails.sales.shopee.shopId')} error={errs?.shopee?.shopId?.message} />
+          <FormField label="Tên Shop" {...register('productData.markeeChat.channelDetails.sales.shopee.shopName')} error={errs?.shopee?.shopName?.message} />
+          <FormField label="Link Shop" {...register('productData.markeeChat.channelDetails.sales.shopee.shopLink')} error={errs?.shopee?.shopLink?.message} />
+          <FormField label="Shop ID" {...register('productData.markeeChat.channelDetails.sales.shopee.shopId')} error={errs?.shopee?.shopId?.message} />
           <FormField label="Người quản lý" {...register('productData.markeeChat.channelDetails.sales.shopee.managerName')} error={errs?.shopee?.managerName?.message} />
         </CardWrapper>
       )}
 
       {selectedSales.includes('tiktokShop') && (
         <CardWrapper title="TikTok Shop">
-          <FormField label="Tên Shop" required {...register('productData.markeeChat.channelDetails.sales.tiktokShop.shopName')} error={errs?.tiktokShop?.shopName?.message} />
-          <FormField label="Link Shop" required {...register('productData.markeeChat.channelDetails.sales.tiktokShop.shopLink')} error={errs?.tiktokShop?.shopLink?.message} />
-          <FormField label="Shop ID" required {...register('productData.markeeChat.channelDetails.sales.tiktokShop.shopId')} error={errs?.tiktokShop?.shopId?.message} />
+          <FormField label="Tên Shop" {...register('productData.markeeChat.channelDetails.sales.tiktokShop.shopName')} error={errs?.tiktokShop?.shopName?.message} />
+          <FormField label="Link Shop" {...register('productData.markeeChat.channelDetails.sales.tiktokShop.shopLink')} error={errs?.tiktokShop?.shopLink?.message} />
+          <FormField label="Shop ID" {...register('productData.markeeChat.channelDetails.sales.tiktokShop.shopId')} error={errs?.tiktokShop?.shopId?.message} />
           <FormField label="Người quản lý" {...register('productData.markeeChat.channelDetails.sales.tiktokShop.managerName')} error={errs?.tiktokShop?.managerName?.message} />
         </CardWrapper>
       )}
 
       {selectedSales.includes('lazada') && (
         <CardWrapper title="Lazada">
-          <FormField label="Tên Shop" required {...register('productData.markeeChat.channelDetails.sales.lazada.shopName')} error={errs?.lazada?.shopName?.message} />
-          <FormField label="Link Shop" required {...register('productData.markeeChat.channelDetails.sales.lazada.shopLink')} error={errs?.lazada?.shopLink?.message} />
-          <FormField label="Seller ID" required {...register('productData.markeeChat.channelDetails.sales.lazada.sellerId')} error={errs?.lazada?.sellerId?.message} />
+          <FormField label="Tên Shop" {...register('productData.markeeChat.channelDetails.sales.lazada.shopName')} error={errs?.lazada?.shopName?.message} />
+          <FormField label="Link Shop" {...register('productData.markeeChat.channelDetails.sales.lazada.shopLink')} error={errs?.lazada?.shopLink?.message} />
+          <FormField label="Seller ID" {...register('productData.markeeChat.channelDetails.sales.lazada.sellerId')} error={errs?.lazada?.sellerId?.message} />
           <FormField label="Người quản lý" {...register('productData.markeeChat.channelDetails.sales.lazada.managerName')} error={errs?.lazada?.managerName?.message} />
         </CardWrapper>
       )}
 
       {selectedSales.includes('ecommerceWebsite') && (
         <CardWrapper title="Website Bán Hàng">
-          <FormField label="Domain" required {...register('productData.markeeChat.channelDetails.sales.ecommerceWebsite.domain')} error={errs?.ecommerceWebsite?.domain?.message} />
-          <FormField label="Nền tảng / CMS (VD: Haravan, Shopify)" required {...register('productData.markeeChat.channelDetails.sales.ecommerceWebsite.platform')} error={errs?.ecommerceWebsite?.platform?.message} />
+          <FormField label="Domain" {...register('productData.markeeChat.channelDetails.sales.ecommerceWebsite.domain')} error={errs?.ecommerceWebsite?.domain?.message} />
+          <FormField label="Nền tảng / CMS (VD: Haravan, Shopify)" {...register('productData.markeeChat.channelDetails.sales.ecommerceWebsite.platform')} error={errs?.ecommerceWebsite?.platform?.message} />
           <div className="mb-5">
             <label className="block text-sm font-medium text-foreground mb-2">Có API kết nối không?</label>
             <select className={`w-full px-4 py-2.5 rounded-xl border bg-white ${errs?.ecommerceWebsite?.hasApi ? 'border-red-500 focus:ring-red-500/10' : 'border-slate-300'}`} {...register('productData.markeeChat.channelDetails.sales.ecommerceWebsite.hasApi')}>
@@ -74,8 +74,8 @@ export const SalesDetailsStep: React.FC = () => {
 
       {selectedSales.includes('pos') && (
         <CardWrapper title="Phần mềm POS">
-          <FormField label="Tên phần mềm POS" required {...register('productData.markeeChat.channelDetails.sales.pos.softwareName')} error={errs?.pos?.softwareName?.message} />
-          <FormField label="Nhà cung cấp" required {...register('productData.markeeChat.channelDetails.sales.pos.provider')} error={errs?.pos?.provider?.message} />
+          <FormField label="Tên phần mềm POS" {...register('productData.markeeChat.channelDetails.sales.pos.softwareName')} error={errs?.pos?.softwareName?.message} />
+          <FormField label="Nhà cung cấp" {...register('productData.markeeChat.channelDetails.sales.pos.provider')} error={errs?.pos?.provider?.message} />
           <FormField label="Phiên bản đang dùng" {...register('productData.markeeChat.channelDetails.sales.pos.version')} error={errs?.pos?.version?.message} />
           <FormField label="Người phụ trách" {...register('productData.markeeChat.channelDetails.sales.pos.managerName')} error={errs?.pos?.managerName?.message} />
         </CardWrapper>
@@ -83,8 +83,8 @@ export const SalesDetailsStep: React.FC = () => {
 
       {selectedSales.includes('erp') && (
         <CardWrapper title="Hệ thống ERP">
-          <FormField label="Tên hệ thống ERP" required {...register('productData.markeeChat.channelDetails.sales.erp.softwareName')} error={errs?.erp?.softwareName?.message} />
-          <FormField label="Nhà cung cấp" required {...register('productData.markeeChat.channelDetails.sales.erp.provider')} error={errs?.erp?.provider?.message} />
+          <FormField label="Tên hệ thống ERP" {...register('productData.markeeChat.channelDetails.sales.erp.softwareName')} error={errs?.erp?.softwareName?.message} />
+          <FormField label="Nhà cung cấp" {...register('productData.markeeChat.channelDetails.sales.erp.provider')} error={errs?.erp?.provider?.message} />
           <FormField label="Phiên bản đang dùng" {...register('productData.markeeChat.channelDetails.sales.erp.version')} error={errs?.erp?.version?.message} />
           <FormField label="Người phụ trách" {...register('productData.markeeChat.channelDetails.sales.erp.managerName')} error={errs?.erp?.managerName?.message} />
         </CardWrapper>
