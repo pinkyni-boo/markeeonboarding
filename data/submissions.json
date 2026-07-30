@@ -302,5 +302,53 @@
     "status": "new",
     "createdAt": "2026-07-30T09:41:28.876Z",
     "updatedAt": "2026-07-30T09:41:28.876Z"
+  },
+  {
+    "id": "sub_ms7c4a0g_c3jizlv",
+    "data": {
+      "company": {
+        "name": "s",
+        "brand": "",
+        "contactName": "s",
+        "email": "niorravucontact@gmail.com",
+        "phone": "s",
+        "website": ""
+      },
+      "selectedProducts": [
+        "markeeChat"
+      ],
+      "productData": {
+        "markeeChat": {
+          "channels": {
+            "chat": [
+              "facebookMessenger"
+            ]
+          },
+          "channelDetails": {
+            "chat": {
+              "facebookMessenger": {
+                "pageName": "s",
+                "pageLink": "s",
+                "adminName": "s"
+              }
+            }
+          }
+        }
+      },
+      "staff": [],
+      "deploymentSchedule": {
+        "preferredDate": "",
+        "preferredTimeSlot": "",
+        "participants": "",
+        "note": ""
+      },
+      "additionalNotes": "",
+      "review": {
+        "confirmed": true
+      }
+    },
+    "status": "new",
+    "createdAt": "2026-07-30T09:52:13.744Z",
+    "updatedAt": "2026-07-30T09:52:13.745Z"
   }
 ]

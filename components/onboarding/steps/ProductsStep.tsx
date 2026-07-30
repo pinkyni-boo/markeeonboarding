@@ -15,8 +15,8 @@ export const ProductsStep: React.FC = () => {
 
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-      <h2 className="text-xl font-semibold text-slate-900 mb-2">Sản phẩm đã mua</h2>
-      <p className="text-slate-500 mb-6">Bạn quan tâm và muốn cấu hình sản phẩm nào của Markee? (Có thể chọn nhiều)</p>
+      <h2 className="text-xl font-semibold text-slate-900 mb-2">Sản phẩm cần triển khai</h2>
+      <p className="text-slate-500 mb-6">Vui lòng chọn các giải pháp bạn muốn thiết lập trong đợt này. (Có thể chọn nhiều)</p>
       
       <Controller
         name="selectedProducts"

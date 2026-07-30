@@ -13,7 +13,7 @@ export const TimelineStep: React.FC = () => {
     <div className="animate-in fade-in slide-in-from-right-4 duration-300">
       <h2 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
         Thời gian dự kiến
-        <span className="text-[10px] font-semibold bg-slate-100 text-slate-500 uppercase tracking-wider px-1.5 py-0.5 rounded">Optional</span>
+        <span className="text-[10px] font-semibold bg-slate-100 text-slate-500 uppercase tracking-wider px-1.5 py-0.5 rounded">(Kh�ng b?t bu?c)</span>
       </h2>
       <p className="text-text-muted mb-8">Cho chúng tôi biết thời gian phù hợp để liên hệ hoặc bắt đầu triển khai.</p>
       

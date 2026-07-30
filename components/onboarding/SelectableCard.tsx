@@ -43,8 +43,13 @@ export const SelectableCard: React.FC<SelectableCardProps> = ({
               {label}
             </p>
             {description && (
-              <span className={clsx('inline-block mt-1', selected ? 'text-primary/80' : 'text-text-muted')}>
+              <span className={clsx('block mt-1', selected ? 'text-primary/80' : 'text-text-muted')}>
                 {description}
+              </span>
+            )}
+            {selected && (
+              <span className="inline-block mt-2 text-[10px] font-semibold bg-primary text-white uppercase tracking-wider px-2 py-0.5 rounded-full">
+                Đã chọn
               </span>
             )}
           </div>
@@ -52,7 +57,7 @@ export const SelectableCard: React.FC<SelectableCardProps> = ({
         <div
           className={twMerge(
             clsx(
-              'ml-4 flex h-5 w-5 shrink-0 items-center justify-center border',
+              'ml-4 flex h-5 w-5 shrink-0 items-center justify-center border transition-colors',
               type === 'radio' ? 'rounded-full' : 'rounded-md',
               selected
                 ? 'border-primary bg-primary text-white'

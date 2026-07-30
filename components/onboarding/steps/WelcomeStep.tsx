@@ -16,7 +16,7 @@ export const WelcomeStep: React.FC = () => {
           Chào mừng đến với Markee
         </h1>
         <h2 className="text-lg md:text-xl text-primary mb-6 font-medium">
-          Cùng Markee chuẩn bị cho quá trình triển khai
+          Chỉ mất khoảng 3 phút để hoàn tất thông tin triển khai.
         </h2>
         
         <p className="text-text-muted mx-auto max-w-[760px] mb-8 text-[15px] md:text-[17px] leading-relaxed">

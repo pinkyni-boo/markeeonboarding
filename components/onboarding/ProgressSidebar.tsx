@@ -31,11 +31,13 @@ export const ProgressSidebar: React.FC<ProgressSidebarProps> = ({ currentStepInd
           <h2 className="text-base font-semibold text-foreground mb-6">Tiến trình thiết lập</h2>
         )}
         
-        {/* Progress Bar */}
         <div className={!isMobile ? "mb-8" : ""}>
           <div className="flex justify-between items-center text-sm mb-3">
             <span className="text-text-muted font-medium">Tiến độ thiết lập</span>
-            <span className="font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full text-xs">Bước {Math.min(steps.length - 1, Math.max(1, currentStepIndex))} / {steps.length - 1}</span>
+            <div className="flex items-center gap-2">
+              <span className="text-slate-400 text-[11px] font-bold">{Math.min(100, Math.max(0, progressPercent))}%</span>
+              <span className="font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full text-xs">Bước {Math.min(steps.length - 1, Math.max(1, currentStepIndex))} / {steps.length - 1}</span>
+            </div>
           </div>
           <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
             <div 
@@ -87,8 +89,12 @@ export const ProgressSidebar: React.FC<ProgressSidebarProps> = ({ currentStepInd
                       {step.label}
                     </span>
                     {step.subLabel && (
-                      <span className={clsx("text-xs mt-0.5", isActive ? "text-primary/70" : "text-text-muted")}>
-                        {step.subLabel}
+                      <span className={clsx("text-xs mt-0.5", isActive ? "text-primary/70" : isCompleted ? "text-green-500/80" : "text-text-muted")}>
+                        {isCompleted ? (
+                          <span className="flex items-center gap-1 font-medium">
+                            Đã hoàn thành
+                          </span>
+                        ) : step.subLabel}
                       </span>
                     )}
                   </div>

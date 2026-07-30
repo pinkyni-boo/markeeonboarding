@@ -20,17 +20,37 @@ function SuccessContent() {
         </div>
       </div>
       
-      <h1 className="text-3xl font-bold text-foreground mb-4">Gửi thông tin thành công!</h1>
-      <p className="text-text-muted mb-8 text-lg">
-        Cảm ơn bạn đã cung cấp thông tin. Đội ngũ Markee sẽ liên hệ lại với bạn trong thời gian sớm nhất để thống nhất phương án triển khai.
+      <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Markee đã nhận được thông tin của bạn</h1>
+      <p className="text-text-muted mb-8 text-base md:text-lg">
+        Đội ngũ triển khai sẽ liên hệ trong vòng 24 giờ làm việc.
       </p>
 
       {id && (
-        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 inline-block mb-10">
-          <p className="text-sm text-text-muted mb-1">Mã yêu cầu của bạn</p>
-          <p className="font-mono text-foreground font-medium">{id}</p>
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 inline-block mb-8">
+          <p className="text-sm text-text-muted mb-1">Mã yêu cầu</p>
+          <p className="font-mono text-foreground font-medium text-lg tracking-wider">
+            ONB-{new Date().getFullYear()}-{id.length > 5 ? id.substring(id.length - 5).toUpperCase() : id.toUpperCase()}
+          </p>
         </div>
       )}
+
+      <div className="text-left bg-slate-50 border border-slate-200 rounded-xl p-6 mb-10 w-full max-w-md mx-auto">
+        <h3 className="font-semibold text-foreground mb-4">Việc tiếp theo</h3>
+        <ul className="space-y-4">
+          <li className="flex items-start gap-3">
+            <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+            <span className="text-sm text-foreground">Đội ngũ Markee sẽ kiểm tra yêu cầu</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+            <span className="text-sm text-foreground">Chúng tôi sẽ liên hệ tư vấn</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+            <span className="text-sm text-foreground">Bắt đầu triển khai</span>
+          </li>
+        </ul>
+      </div>
 
       <div className="flex flex-col items-center gap-3">
         <a 
@@ -79,7 +99,16 @@ export default function SuccessPage() {
             <span className="hidden md:inline-block text-sm text-text-muted border-l border-border-color pl-4 ml-2">Thiết lập thông tin triển khai</span>
           </div>
           
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 md:gap-6">
+            <div className="hidden lg:flex items-center gap-3 mr-2">
+              <div className="text-right">
+                <p className="text-xs text-text-muted">Cần hỗ trợ?</p>
+                <p className="text-sm font-semibold text-foreground">0765 055 708</p>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-slate-100 overflow-hidden border border-border-color">
+                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=MarkeeSupport&backgroundColor=f8fafc" alt="Support Bot" className="w-full h-full object-cover p-1" />
+              </div>
+            </div>
             <button 
               onClick={(e) => {
                 e.preventDefault();
@@ -91,7 +120,7 @@ export default function SuccessPage() {
               }}
               className="text-xs md:text-sm font-medium text-white bg-primary hover:bg-primary-dark transition-colors px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg shadow-sm flex items-center gap-2"
             >
-              Liên hệ Markee
+              Chat với Markee AI
             </button>
           </div>
         </div>
