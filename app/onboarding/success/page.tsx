@@ -48,7 +48,7 @@ function SuccessContent() {
 export default function SuccessPage() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans flex flex-col">
-      <header className="relative z-10 border-b border-border-color bg-white/80 backdrop-blur-md">
+      <header className="sticky top-0 z-50 border-b border-border-color bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex h-[72px] w-full max-w-[1560px] items-center justify-between px-5 lg:px-8 2xl:px-10">
           <div className="flex items-center gap-3">
             <img src="https://app.markeeai.com/markeeai_logo.svg" alt="Markee Logo" className="h-7 md:h-8 w-auto" />

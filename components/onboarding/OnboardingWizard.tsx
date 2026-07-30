@@ -126,12 +126,32 @@ export const OnboardingWizard: React.FC = () => {
       }
     }
     
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const scrollToTop = () => {
+      const formEl = document.getElementById('form-content-top');
+      if (formEl) {
+        const top = formEl.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+    
+    scrollToTop();
     setCurrentStepIndex((prev) => Math.min(prev + 1, activeSteps.length - 1));
   };
 
   const handleBack = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const scrollToTop = () => {
+      const formEl = document.getElementById('form-content-top');
+      if (formEl) {
+        const top = formEl.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+    
+    scrollToTop();
     setCurrentStepIndex((prev) => Math.max(prev - 1, 0));
   };
 

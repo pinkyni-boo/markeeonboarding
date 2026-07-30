@@ -17,7 +17,7 @@ export const OnboardingLayout: React.FC<OnboardingLayoutProps> = ({ children, cu
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/[0.02] rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none" />
 
       {/* Header */}
-      <header className="relative z-10 border-b border-border-color bg-white/80 backdrop-blur-md">
+      <header className="sticky top-0 z-50 border-b border-border-color bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex h-[72px] w-full max-w-[1560px] items-center justify-between px-5 lg:px-8 2xl:px-10">
           <div className="flex items-center gap-3">
             <img src="https://app.markeeai.com/markeeai_logo.svg" alt="Markee Logo" className="h-7 md:h-8 w-auto" />
@@ -57,7 +57,7 @@ export const OnboardingLayout: React.FC<OnboardingLayoutProps> = ({ children, cu
           </div>
 
           {/* Form Content */}
-          <div className="min-w-0 relative z-20 w-full">
+          <div id="form-content-top" className="min-w-0 relative z-20 w-full">
             <div className="w-full rounded-[24px] border border-border-color bg-white p-6 md:p-10 lg:p-12 shadow-sm min-h-[640px] flex flex-col relative overflow-hidden">
               {children}
             </div>
