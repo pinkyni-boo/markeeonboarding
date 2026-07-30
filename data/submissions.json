@@ -555,5 +555,87 @@
     "status": "new",
     "createdAt": "2026-07-30T10:53:29.177Z",
     "updatedAt": "2026-07-30T10:53:29.177Z"
+  },
+  {
+    "id": "sub_ms7eiof7_kkbvfkl",
+    "data": {
+      "company": {
+        "name": "Test",
+        "contactName": "Test",
+        "contactChannel": "Zalo",
+        "contactId": "0909561743",
+        "email": "test@gmail.com",
+        "phone": "",
+        "website": ""
+      },
+      "selectedProducts": [
+        "markeeChat"
+      ],
+      "productData": {
+        "markeeChat": {
+          "channels": {
+            "chat": [
+              "facebookMessenger"
+            ],
+            "sales": [
+              "shopee"
+            ],
+            "ads": [
+              "zaloAds"
+            ]
+          },
+          "channelDetails": {
+            "chat": {
+              "facebookMessenger": {
+                "pageName": "Test",
+                "pageLink": "",
+                "adminName": ""
+              }
+            },
+            "sales": {
+              "shopee": {
+                "shopName": "Test",
+                "shopLink": "",
+                "shopId": "",
+                "managerName": ""
+              }
+            },
+            "ads": {
+              "zaloAds": {
+                "accountName": "Test",
+                "accountId": "",
+                "managerName": ""
+              }
+            }
+          }
+        }
+      },
+      "staff": [
+        {
+          "id": "h0v0tpe",
+          "name": "Thảo",
+          "email": "",
+          "role": "Admin",
+          "product": "markeeChat",
+          "channels": "Fb page"
+        }
+      ],
+      "deploymentSchedule": {
+        "supportMethods": [
+          "googleMeet"
+        ],
+        "preferredDate": "2026-08-29",
+        "preferredTimeSlot": "morning",
+        "participants": "Thảo",
+        "note": "Document"
+      },
+      "additionalNotes": "Test",
+      "review": {
+        "confirmed": true
+      }
+    },
+    "status": "new",
+    "createdAt": "2026-07-30T10:59:24.835Z",
+    "updatedAt": "2026-07-30T10:59:24.835Z"
   }
 ]

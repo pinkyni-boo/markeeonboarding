@@ -31,7 +31,7 @@ export async function sendOnboardingLeadToTelegram(
     `<b>Mã yêu cầu:</b> ${escapeHtml(lead.requestCode)}`,
     `<b>Doanh nghiệp / Thương hiệu:</b> ${escapeHtml(lead.companyName)}`,
     `<b>Người liên hệ:</b> ${escapeHtml(lead.contactName)}`,
-    `<b>Số điện thoại:</b> ${escapeHtml(lead.phone)}`,
+    `<b>Số điện thoại dự phòng:</b> ${escapeHtml(lead.phone || "Chưa cung cấp")}`,
     `<b>Email:</b> ${escapeHtml(lead.email)}`,
     `<b>Sản phẩm:</b> ${escapeHtml(lead.products.join(", ") || "Chưa chọn")}`,
     `<b>Kênh liên hệ:</b> ${escapeHtml(lead.channels.join(", ") || "Chưa cung cấp")}`,

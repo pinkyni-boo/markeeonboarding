@@ -32,7 +32,7 @@ export async function POST(request: Request) {
         phone: validatedData.company.phone || '',
         email: validatedData.company.email,
         products: validatedData.selectedProducts,
-        channels: [validatedData.company.contactChannel],
+        channels: [`${validatedData.company.contactChannel} - ${validatedData.company.contactId}`],
       });
     } catch (error) {
       console.error('Failed to send Telegram notification', error);
