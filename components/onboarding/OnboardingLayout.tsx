@@ -29,10 +29,10 @@ export const OnboardingLayout: React.FC<OnboardingLayoutProps> = ({ children, cu
             <div className="hidden lg:flex items-center gap-3 mr-2">
               <div className="text-right">
                 <p className="text-xs text-text-muted">Cần hỗ trợ?</p>
-                <p className="text-sm font-semibold text-foreground">090.123.4567</p>
+                <p className="text-sm font-semibold text-foreground">0765 055 708</p>
               </div>
               <div className="w-10 h-10 rounded-full bg-slate-100 overflow-hidden border border-border-color">
-                <img src="https://ui-avatars.com/api/?name=Support&background=0D8ABC&color=fff" alt="Support" className="w-full h-full object-cover" />
+                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=MarkeeSupport&backgroundColor=f8fafc" alt="Support Bot" className="w-full h-full object-cover p-1" />
               </div>
             </div>
             
