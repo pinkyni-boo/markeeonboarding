@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { OnboardingRepository } from '@/lib/onboarding/repository';
-import { OnboardingData } from '@/types/onboarding';
+import { saveSubmission } from '@/lib/onboarding/repository';
+import { OnboardingData, OnboardingSubmission } from '@/types/onboarding';
 
 export async function POST(req: Request) {
   try {
@@ -24,7 +24,15 @@ export async function POST(req: Request) {
     };
 
     // Save to DB to track the lead
-    const submissionId = await OnboardingRepository.createSubmission(mockData);
+    const submissionId = `demo-${Date.now()}`;
+    const submission: OnboardingSubmission = {
+      id: submissionId,
+      data: mockData,
+      status: 'new',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+    await saveSubmission(submission);
 
     // Generate a mock password
     const demoPassword = Math.random().toString(36).slice(-8);
