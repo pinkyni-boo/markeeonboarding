@@ -11,11 +11,11 @@ interface FormFieldProps extends React.InputHTMLAttributes<HTMLInputElement | HT
 export const FormField = forwardRef<HTMLInputElement | HTMLTextAreaElement, FormFieldProps>(
   ({ label, error, as = 'input', className, required, ...props }, ref) => {
     const Component = as;
-    const baseClasses = "block w-full rounded-xl border bg-white px-3 md:px-4 py-2.5 md:py-3 text-foreground shadow-sm transition-colors placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10 text-base sm:text-sm";
+    const baseClasses = "block w-full rounded-[10px] md:rounded-xl border bg-white px-3 md:px-4 py-2 md:py-3 text-foreground shadow-sm transition-colors placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10 text-base sm:text-sm";
     
     return (
-      <div className="mb-5">
-        <label className="mb-2 block text-sm font-medium text-foreground">
+      <div className="mb-4 md:mb-5">
+        <label className="mb-1.5 md:mb-2 block text-sm font-medium text-foreground">
           {label} {required && <span className="text-primary">*</span>}
         </label>
         <Component

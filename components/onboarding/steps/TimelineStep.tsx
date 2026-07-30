@@ -50,9 +50,9 @@ export const TimelineStep: React.FC = () => {
         />
         
         <div>
-          <label className="block text-sm font-medium text-foreground mb-2">Khung giờ phù hợp</label>
+          <label className="block text-sm font-medium text-foreground mb-1.5 md:mb-2">Khung giờ phù hợp</label>
           <select 
-            className="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white"
+            className="w-full px-3 md:px-4 py-2 md:py-3 rounded-[10px] md:rounded-xl border border-slate-300 bg-white text-base sm:text-sm"
             {...register('deploymentSchedule.preferredTimeSlot')}
           >
             <option value="">Chọn...</option>
