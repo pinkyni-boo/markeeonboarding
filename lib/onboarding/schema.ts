@@ -32,12 +32,12 @@ export const channelDetailsSchema = z.object({
       pageName: z.string().optional(),
       pageLink: z.string().optional(),
       adminName: z.string().optional(),
-      hasAdminAccess: z.enum(['yes', 'no', 'undecided'], { errorMap: () => ({ message: 'Vui lòng chọn một tuỳ chọn' }) }).optional(),
+      hasAdminAccess: z.enum(['yes', 'no', 'undecided', '']).transform(v => v === '' ? undefined : (v as 'yes' | 'no' | 'undecided')).optional(),
     }).optional(),
     instagram: z.object({
       accountName: z.string().optional(),
       accountLink: z.string().optional(),
-      linkedToFacebook: z.enum(['yes', 'no', 'undecided'], { errorMap: () => ({ message: 'Vui lòng chọn một tuỳ chọn' }) }).optional(),
+      linkedToFacebook: z.enum(['yes', 'no', 'undecided', '']).transform(v => v === '' ? undefined : (v as 'yes' | 'no' | 'undecided')).optional(),
       managerName: z.string().optional(),
     }).optional(),
     zaloOA: z.object({
@@ -95,7 +95,7 @@ export const channelDetailsSchema = z.object({
     ecommerceWebsite: z.object({
       domain: z.string().optional(),
       platform: z.string().optional(),
-      hasApi: z.enum(['yes', 'no', 'undecided'], { errorMap: () => ({ message: 'Vui lòng chọn một tuỳ chọn' }) }).optional(),
+      hasApi: z.enum(['yes', 'no', 'undecided', '']).transform(v => v === '' ? undefined : (v as 'yes' | 'no' | 'undecided')).optional(),
       adminName: z.string().optional(),
     }).optional(),
     pos: z.object({
