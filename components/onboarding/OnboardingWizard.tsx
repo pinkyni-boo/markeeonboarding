@@ -74,12 +74,11 @@ export const OnboardingWizard: React.FC = () => {
   }, [activeSteps.length, currentStepIndex]);
 
   useEffect(() => {
-    const draft = getDraft();
+    const draft = getDraft() as any;
     if (draft && Object.keys(draft).length > 0) {
-      if (confirm('Chúng tôi tìm thấy dữ liệu bạn đang nhập dở. Bạn có muốn tiếp tục không?')) {
+      const hasMeaningfulData = draft.company?.name || draft.company?.email || draft.company?.phone || (draft.selectedProducts && draft.selectedProducts.length > 0);
+      if (hasMeaningfulData) {
         methods.reset(draft as OnboardingFormValues);
-      } else {
-        clearDraft();
       }
     }
     setIsInitialized(true);
