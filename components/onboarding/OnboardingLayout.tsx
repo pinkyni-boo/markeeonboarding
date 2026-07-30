@@ -58,7 +58,7 @@ export const OnboardingLayout: React.FC<OnboardingLayoutProps> = ({ children, cu
 
           {/* Form Content */}
           <div id="form-content-top" className="min-w-0 relative z-20 w-full">
-            <div className="w-full rounded-[24px] border border-border-color bg-white p-6 md:p-10 lg:p-12 shadow-sm min-h-[640px] flex flex-col relative overflow-hidden">
+            <div className="w-full rounded-[24px] border border-border-color bg-white p-6 md:p-10 lg:p-12 shadow-sm min-h-[480px] flex flex-col relative overflow-hidden">
               {children}
             </div>
 

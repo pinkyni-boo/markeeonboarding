@@ -17,7 +17,7 @@ export const StepNavigation: React.FC<StepNavigationProps> = ({
   isSubmitting
 }) => {
   return (
-    <div className="mt-8 flex items-center justify-between gap-3 pt-6 border-t border-border-color">
+    <div className="mt-6 flex items-center justify-between gap-3 pt-5 border-t border-border-color">
       <button
         type="button"
         onClick={onBack}

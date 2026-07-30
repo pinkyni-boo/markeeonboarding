@@ -45,9 +45,8 @@ export const ProgressSidebar: React.FC<ProgressSidebarProps> = ({ currentStepInd
           </div>
         </div>
 
-        {/* Steps List */}
         {!isMobile && (
-          <div className="space-y-2 flex-1">
+          <div className="space-y-1 flex-1">
             {steps.slice(1).map((step, index) => { // slice(1) to skip 'welcome'
               const isCompleted = index < displayStep;
               const isActive = index === displayStep && currentStepIndex > 0;
@@ -57,7 +56,7 @@ export const ProgressSidebar: React.FC<ProgressSidebarProps> = ({ currentStepInd
                   key={step.id}
                   className={twMerge(
                     clsx(
-                      'flex items-start space-x-4 p-3 rounded-xl transition-all duration-300',
+                      'flex items-start space-x-3 py-2 px-3 rounded-xl transition-all duration-300',
                       isActive ? 'bg-primary-light' : 'bg-transparent'
                     )
                   )}
