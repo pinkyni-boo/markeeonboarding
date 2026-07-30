@@ -34,14 +34,14 @@ function SuccessContent() {
         </div>
       )}
 
-      <div className="text-left bg-slate-50 border border-slate-200 rounded-xl p-6 mb-10 w-full max-w-md mx-auto">
-        <h3 className="font-semibold text-foreground mb-6">Việc tiếp theo</h3>
-        <div className="space-y-4 relative before:absolute before:inset-0 before:ml-3 before:-translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
+      <div className="text-left bg-slate-50 border border-slate-200 rounded-xl p-5 md:p-6 mb-10 w-full max-w-md mx-auto">
+        <h3 className="font-semibold text-foreground mb-4 md:mb-6">Việc tiếp theo</h3>
+        <div className="space-y-3 md:space-y-4 relative before:absolute before:inset-0 before:ml-3 before:-translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
           <div className="relative flex items-center group">
             <div className="flex items-center justify-center w-6 h-6 rounded-full border border-white bg-green-500 text-slate-50 shadow shrink-0 z-10">
               <CheckCircle2 className="w-4 h-4 text-white" />
             </div>
-            <div className="flex-1 ml-4 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
+            <div className="flex-1 ml-3 md:ml-4 p-2.5 md:p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
               <span className="text-sm font-semibold text-foreground">1. Đã nhận yêu cầu</span>
             </div>
           </div>
@@ -49,7 +49,7 @@ function SuccessContent() {
             <div className="flex items-center justify-center w-6 h-6 rounded-full border border-slate-200 bg-slate-100 text-slate-500 shadow-sm shrink-0 z-10">
               <span className="text-xs font-medium">2</span>
             </div>
-            <div className="flex-1 ml-4 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
+            <div className="flex-1 ml-3 md:ml-4 p-2.5 md:p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
               <span className="text-sm font-medium text-foreground">⏳ Kiểm tra thông tin</span>
             </div>
           </div>
@@ -57,7 +57,7 @@ function SuccessContent() {
             <div className="flex items-center justify-center w-6 h-6 rounded-full border border-slate-200 bg-slate-100 text-slate-500 shadow-sm shrink-0 z-10">
               <span className="text-xs font-medium">3</span>
             </div>
-            <div className="flex-1 ml-4 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
+            <div className="flex-1 ml-3 md:ml-4 p-2.5 md:p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
               <span className="text-sm font-medium text-foreground">📞 Liên hệ xác nhận</span>
             </div>
           </div>
@@ -65,7 +65,7 @@ function SuccessContent() {
             <div className="flex items-center justify-center w-6 h-6 rounded-full border border-slate-200 bg-slate-100 text-slate-500 shadow-sm shrink-0 z-10">
               <span className="text-xs font-medium">4</span>
             </div>
-            <div className="flex-1 ml-4 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
+            <div className="flex-1 ml-3 md:ml-4 p-2.5 md:p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
               <span className="text-sm font-medium text-foreground">🚀 Bắt đầu triển khai</span>
             </div>
           </div>
@@ -144,7 +144,8 @@ export default function SuccessPage() {
               }}
               className="text-xs md:text-sm font-medium text-white bg-primary hover:bg-primary-dark transition-colors px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg shadow-sm flex items-center gap-2"
             >
-              Chat với Markee AI
+              <span className="hidden md:inline">Chat với Markee AI</span>
+              <span className="md:hidden">Mở Chat</span>
             </button>
           </div>
         </div>

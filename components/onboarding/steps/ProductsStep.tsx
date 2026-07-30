@@ -15,14 +15,14 @@ export const ProductsStep: React.FC = () => {
 
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-      <h2 className="text-xl font-semibold text-slate-900 mb-2">Sản phẩm cần triển khai</h2>
-      <p className="text-slate-500 mb-6">Vui lòng chọn các giải pháp bạn muốn thiết lập trong đợt này. (Có thể chọn nhiều)</p>
+      <h2 className="text-lg md:text-xl font-semibold text-slate-900 mb-1 md:mb-2">Sản phẩm cần triển khai</h2>
+      <p className="text-sm md:text-base text-slate-500 mb-4 md:mb-6">Vui lòng chọn các giải pháp bạn muốn thiết lập trong đợt này. (Có thể chọn nhiều)</p>
       
       <Controller
         name="selectedProducts"
         control={control}
         render={({ field }) => (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-2">
             {products.map((opt) => {
               const isSelected = field.value?.includes(opt.id) || false;
               
@@ -37,7 +37,7 @@ export const ProductsStep: React.FC = () => {
                     field.onChange(newValue);
                   }}
                   className={clsx(
-                    'relative p-5 rounded-xl border-2 transition-all cursor-pointer group',
+                    'relative p-4 md:p-5 rounded-xl border-2 transition-all cursor-pointer group',
                     isSelected
                       ? 'border-primary bg-primary/5 shadow-sm'
                       : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50'

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { useFormContext, Controller } from 'react-hook-form';
 import { SelectableCard } from '../SelectableCard';
 import { chatChannelOptions, salesChannelOptions, adsChannelOptions } from '@/lib/onboarding/options';
@@ -14,7 +14,7 @@ const CollapsibleSection: React.FC<{
   const { control } = useFormContext<OnboardingFormValues>();
 
   return (
-    <div className="mb-4 md:mb-6 border border-border-color rounded-2xl overflow-hidden bg-white">
+    <div className="mb-4 md:mb-4 md:mb-6 border border-border-color rounded-2xl overflow-hidden bg-white">
       <button
         type="button"
         onClick={onToggle}
@@ -67,31 +67,31 @@ export const ChannelsStep: React.FC = () => {
 
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-      <h2 className="text-xl font-semibold text-foreground mb-2">Chọn các kênh cần tích hợp <span className="text-sm font-normal text-slate-500">(Không bắt buộc)</span></h2>
-      <p className="text-text-muted mb-6">Bạn có thể chọn nhiều nền tảng thuộc các nhóm khác nhau, hoặc để trống và cung cấp sau.</p>
+      <h2 className="text-lg md:text-xl font-semibold text-foreground mb-2">Chá»n cÃ¡c kÃªnh cáº§n tÃ­ch há»£p <span className="text-sm font-normal text-slate-500">(KhÃ´ng báº¯t buá»™c)</span></h2>
+      <p className="text-text-muted mb-4 md:mb-6">Báº¡n cÃ³ thá»ƒ chá»n nhiá»u ná»n táº£ng thuá»™c cÃ¡c nhÃ³m khÃ¡c nhau, hoáº·c Ä‘á»ƒ trá»‘ng vÃ  cung cáº¥p sau.</p>
       
       {errors.productData?.markeeChat?.channels?.chat && (
-        <div className="mb-6 p-4 bg-red-50 text-red-500 border border-red-200 rounded-xl text-sm">
+        <div className="mb-4 md:mb-6 p-4 bg-red-50 text-red-500 border border-red-200 rounded-xl text-sm">
           {errors.productData.markeeChat.channels.chat.message as string}
         </div>
       )}
 
       <CollapsibleSection 
-        title="Kênh Chat" 
+        title="KÃªnh Chat" 
         name="productData.markeeChat.channels.chat" 
         options={chatChannelOptions} 
         isOpen={openSection === 'chat'}
         onToggle={() => setOpenSection(openSection === 'chat' ? '' : 'chat')}
       />
       <CollapsibleSection 
-        title="Kênh Bán Hàng" 
+        title="KÃªnh BÃ¡n HÃ ng" 
         name="productData.markeeChat.channels.sales" 
         options={salesChannelOptions} 
         isOpen={openSection === 'sales'}
         onToggle={() => setOpenSection(openSection === 'sales' ? '' : 'sales')}
       />
       <CollapsibleSection 
-        title="Kênh Quảng Cáo" 
+        title="KÃªnh Quáº£ng CÃ¡o" 
         name="productData.markeeChat.channels.ads" 
         options={adsChannelOptions} 
         isOpen={openSection === 'ads'}

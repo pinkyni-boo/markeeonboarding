@@ -47,7 +47,8 @@ export const OnboardingLayout: React.FC<OnboardingLayoutProps> = ({ children, cu
               }}
               className="text-xs md:text-sm font-medium text-white bg-primary hover:bg-primary-dark transition-colors px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg shadow-sm flex items-center gap-2"
             >
-              Chat với Markee AI
+              <span className="hidden md:inline">Chat với Markee AI</span>
+              <span className="md:hidden">Mở Chat</span>
             </button>
           </div>
         </div>
