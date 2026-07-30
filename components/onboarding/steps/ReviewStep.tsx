@@ -60,9 +60,10 @@ export const ReviewStep: React.FC<{ setStep: (stepId: string) => void }> = ({ se
       <div className="bg-white rounded-[16px] border border-slate-200 px-5 shadow-sm mb-8 divide-y divide-slate-100">
         <Section title="Doanh nghiệp" onEdit={() => setStep('company')}>
           <Row label="Tên doanh nghiệp" value={data.company?.name} />
-          <Row label="Tên thương hiệu" value={data.company?.brand} />
           <Row label="Người liên hệ" value={data.company?.contactName} />
-          <Row label="Số điện thoại" value={data.company?.phone} />
+          <Row label="Kênh liên hệ chính" value={data.company?.contactChannel} />
+          <Row label="ID/Link liên hệ" value={data.company?.contactId} />
+          <Row label="Số điện thoại dự phòng" value={data.company?.phone} />
           <Row label="Email" value={data.company?.email} />
           <Row label="Website" value={data.company?.website} />
         </Section>

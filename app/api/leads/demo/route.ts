@@ -16,6 +16,8 @@ export async function POST(req: Request) {
       company: {
         name: name || 'Khách hàng Demo',
         contactName: name || 'Khách hàng Demo',
+        contactChannel: 'Khác',
+        contactId: 'N/A',
         email: email || '',
         phone: phone || '',
       },

@@ -70,13 +70,14 @@ export const AdminDetailClient: React.FC<AdminDetailClientProps> = ({ data }) =>
           <div className="space-y-6">
             <Section title="Thông tin doanh nghiệp" icon={Building2}>
               <Row label="Tên doanh nghiệp" value={data.company?.name} />
-              <Row label="Thương hiệu" value={data.company?.brand} />
               <Row label="Website" value={data.company?.website} />
               <div className="mt-4 pt-4 border-t border-slate-100">
                 <h4 className="text-sm font-semibold text-slate-700 mb-2">Người liên hệ</h4>
                 <Row label="Họ tên" value={data.company?.contactName} />
+                <Row label="Kênh liên hệ" value={data.company?.contactChannel} />
+                <Row label="ID/Link liên hệ" value={data.company?.contactId} />
+                <Row label="SĐT dự phòng" value={data.company?.phone} />
                 <Row label="Email" value={data.company?.email} />
-                <Row label="Số điện thoại" value={data.company?.phone} />
               </div>
             </Section>
           </div>

@@ -2,8 +2,9 @@ import { z } from 'zod';
 
 export const companySchema = z.object({
   name: z.string().min(1, 'Vui lòng nhập tên doanh nghiệp'),
-  brand: z.string().optional(),
   contactName: z.string().min(1, 'Vui lòng nhập người liên hệ'),
+  contactChannel: z.string().min(1, 'Vui lòng chọn kênh liên hệ'),
+  contactId: z.string().min(1, 'Vui lòng nhập thông tin liên hệ'),
   email: z.string().email('Email không đúng định dạng').min(1, 'Vui lòng nhập email'),
   phone: z.string().min(1, 'Vui lòng nhập số điện thoại'),
   website: z.string().optional(),

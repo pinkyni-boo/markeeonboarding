@@ -23,6 +23,21 @@ export async function POST(request: Request) {
     // Save to repository
     await saveSubmission(submission);
     
+    try {
+      const { sendOnboardingLeadToTelegram } = await import('@/lib/server/telegram');
+      await sendOnboardingLeadToTelegram({
+        requestCode: `ONB-${new Date().getFullYear()}-${submission.id.substring(4, 9).toUpperCase()}`,
+        companyName: validatedData.company.name,
+        contactName: validatedData.company.contactName,
+        phone: validatedData.company.phone,
+        email: validatedData.company.email,
+        products: validatedData.selectedProducts,
+        channels: [validatedData.company.contactChannel],
+      });
+    } catch (error) {
+      console.error('Failed to send Telegram notification', error);
+    }
+    
     return NextResponse.json({ success: true, submissionId: submission.id }, { status: 201 });
   } catch (error: unknown) {
     console.error('Submission error:', error);

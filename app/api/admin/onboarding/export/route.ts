@@ -6,14 +6,15 @@ export async function GET() {
   try {
     const submissions = await getSubmissions();
     
-    // Create CSV header
+      // Create CSV header
     const headers = [
       'ID',
       'Ngày Gửi',
       'Trạng Thái',
       'Doanh Nghiệp',
-      'Thương Hiệu',
       'Người Liên Hệ',
+      'Kênh Liên Hệ',
+      'Thông Tin Liên Hệ',
       'Email',
       'Số Điện Thoại',
       'Website',
@@ -57,8 +58,9 @@ export async function GET() {
         format(new Date(sub.createdAt), 'dd/MM/yyyy HH:mm'),
         sub.status,
         data.company?.name || '',
-        data.company?.brand || '',
         data.company?.contactName || '',
+        data.company?.contactChannel || '',
+        data.company?.contactId || '',
         data.company?.email || '',
         data.company?.phone || '',
         data.company?.website || '',

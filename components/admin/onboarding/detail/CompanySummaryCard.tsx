@@ -18,12 +18,12 @@ export const CompanySummaryCard = ({ company }: { company: OnboardingData['compa
           <div className="font-medium text-slate-900">{company.name || 'Chưa cung cấp'}</div>
         </div>
 
-        {company.brand && (
+        {company.contactChannel && (
           <div>
             <div className="text-xs text-slate-500 mb-1 uppercase tracking-wider font-semibold flex items-center gap-1.5">
-              <Briefcase className="w-3.5 h-3.5" /> Thương hiệu
+              <Briefcase className="w-3.5 h-3.5" /> Kênh liên hệ chính
             </div>
-            <div className="text-slate-700">{company.brand}</div>
+            <div className="text-slate-700">{company.contactChannel} - {company.contactId}</div>
           </div>
         )}
 

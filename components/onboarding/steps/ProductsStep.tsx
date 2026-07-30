@@ -54,6 +54,21 @@ export const ProductsStep: React.FC = () => {
                         )}
                       </div>
                       <p className="text-sm text-slate-500 mt-1">{opt.description}</p>
+                      
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          alert('Video giới thiệu đang được cập nhật...');
+                        }}
+                        className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:text-primary-dark transition-colors bg-primary/5 hover:bg-primary/10 px-2.5 py-1.5 rounded-md"
+                      >
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Xem video giới thiệu
+                      </button>
                     </div>
                     
                     <div className={clsx(

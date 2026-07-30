@@ -17,24 +17,15 @@ export const CompanyStep: React.FC = () => {
           <hr className="border-border-color mb-4" />
         </div>
 
-        <FormField
-          label="Tên doanh nghiệp"
-          placeholder="Ví dụ: Công ty CP Công nghệ Markee"
-          required
-          {...register('company.name')}
-          error={errors.company?.name?.message}
-        />
-        <FormField
-          label={
-            <div className="flex items-center gap-2">
-              <span>Tên thương hiệu</span>
-              <span className="text-[10px] font-semibold bg-slate-100 text-slate-500 uppercase tracking-wider px-1.5 py-0.5 rounded">(Không bắt buộc)</span>
-            </div>
-          }
-          placeholder="Ví dụ: Markee"
-          {...register('company.brand')}
-          error={errors.company?.brand?.message}
-        />
+        <div className="md:col-span-2">
+          <FormField
+            label="Tên doanh nghiệp / Thương hiệu"
+            placeholder="Ví dụ: Công ty CP Công nghệ Markee"
+            required
+            {...register('company.name')}
+            error={errors.company?.name?.message}
+          />
+        </div>
         
         {/* Contact Info */}
         <div className="md:col-span-2 mt-4">
@@ -42,15 +33,44 @@ export const CompanyStep: React.FC = () => {
           <hr className="border-border-color mb-4" />
         </div>
 
+        <div className="md:col-span-2">
+          <FormField
+            label="Họ và tên người liên hệ"
+            placeholder="Nguyễn Văn A"
+            required
+            {...register('company.contactName')}
+            error={errors.company?.contactName?.message}
+          />
+        </div>
+        
+        <div>
+          <label className="block text-sm font-medium text-foreground mb-1.5 md:mb-2">Kênh liên hệ chính <span className="text-primary">*</span></label>
+          <select 
+            className="block w-full rounded-[10px] md:rounded-xl border bg-white px-3 md:px-4 py-2 md:py-3 text-foreground shadow-sm transition-colors border-slate-300 focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10 text-base sm:text-sm mb-4 md:mb-5"
+            {...register('company.contactChannel')}
+          >
+            <option value="">Chọn kênh...</option>
+            <option value="Zalo">Zalo</option>
+            <option value="Telegram">Telegram</option>
+            <option value="Phone">Điện thoại</option>
+            <option value="Email">Email</option>
+            <option value="Khác">Khác</option>
+          </select>
+          {errors.company?.contactChannel?.message && (
+            <p className="mt-[-0.5rem] mb-4 text-sm text-red-500">{errors.company.contactChannel.message}</p>
+          )}
+        </div>
+
         <FormField
-          label="Họ và tên người liên hệ"
-          placeholder="Nguyễn Văn A"
+          label="Thông tin liên hệ (SĐT / Link)"
+          placeholder="Ví dụ: 0901234567 hoặc https://t.me/nick"
           required
-          {...register('company.contactName')}
-          error={errors.company?.contactName?.message}
+          {...register('company.contactId')}
+          error={errors.company?.contactId?.message}
         />
+
         <FormField
-          label="Số điện thoại"
+          label="Số điện thoại dự phòng"
           placeholder="0901234567"
           required
           {...register('company.phone')}
@@ -64,17 +84,19 @@ export const CompanyStep: React.FC = () => {
           {...register('company.email')}
           error={errors.company?.email?.message}
         />
-        <FormField
-          label={
-            <div className="flex items-center gap-2">
-              <span>Website</span>
-              <span className="text-[10px] font-semibold bg-slate-100 text-slate-500 uppercase tracking-wider px-1.5 py-0.5 rounded">(Không bắt buộc)</span>
-            </div>
-          }
-          placeholder="https://markee.com"
-          {...register('company.website')}
-          error={errors.company?.website?.message}
-        />
+        <div className="md:col-span-2">
+          <FormField
+            label={
+              <div className="flex items-center gap-2">
+                <span>Website</span>
+                <span className="text-[10px] font-semibold bg-slate-100 text-slate-500 uppercase tracking-wider px-1.5 py-0.5 rounded">(Không bắt buộc)</span>
+              </div>
+            }
+            placeholder="https://markee.com"
+            {...register('company.website')}
+            error={errors.company?.website?.message}
+          />
+        </div>
       </div>
     </div>
   );
