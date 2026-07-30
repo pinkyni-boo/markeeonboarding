@@ -35,31 +35,51 @@ function SuccessContent() {
       )}
 
       <div className="text-left bg-slate-50 border border-slate-200 rounded-xl p-6 mb-10 w-full max-w-md mx-auto">
-        <h3 className="font-semibold text-foreground mb-4">Việc tiếp theo</h3>
-        <ul className="space-y-4">
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-            <span className="text-sm text-foreground">Đội ngũ Markee sẽ kiểm tra yêu cầu</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-            <span className="text-sm text-foreground">Chúng tôi sẽ liên hệ tư vấn</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-            <span className="text-sm text-foreground">Bắt đầu triển khai</span>
-          </li>
-        </ul>
+        <h3 className="font-semibold text-foreground mb-6">Việc tiếp theo</h3>
+        <div className="space-y-6 relative before:absolute before:inset-0 before:ml-2.5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
+          <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+            <div className="flex items-center justify-center w-6 h-6 rounded-full border border-white bg-green-500 text-slate-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+              <CheckCircle2 className="w-4 h-4 text-white" />
+            </div>
+            <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.5rem)] ml-3 md:ml-0 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
+              <span className="text-sm font-semibold text-foreground">1. Đã nhận yêu cầu</span>
+            </div>
+          </div>
+          <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+            <div className="flex items-center justify-center w-6 h-6 rounded-full border border-slate-200 bg-slate-100 text-slate-500 shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+              <span className="text-xs font-medium">2</span>
+            </div>
+            <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.5rem)] ml-3 md:ml-0 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
+              <span className="text-sm font-medium text-foreground">⏳ Kiểm tra thông tin</span>
+            </div>
+          </div>
+          <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+            <div className="flex items-center justify-center w-6 h-6 rounded-full border border-slate-200 bg-slate-100 text-slate-500 shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+              <span className="text-xs font-medium">3</span>
+            </div>
+            <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.5rem)] ml-3 md:ml-0 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
+              <span className="text-sm font-medium text-foreground">📞 Liên hệ xác nhận</span>
+            </div>
+          </div>
+          <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+            <div className="flex items-center justify-center w-6 h-6 rounded-full border border-slate-200 bg-slate-100 text-slate-500 shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+              <span className="text-xs font-medium">4</span>
+            </div>
+            <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.5rem)] ml-3 md:ml-0 p-3 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center gap-2">
+              <span className="text-sm font-medium text-foreground">🚀 Bắt đầu triển khai</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="flex flex-col items-center gap-3">
+      <div className="flex flex-col items-center gap-3 mb-8">
         <a 
           href="https://chat.markeeai.com/app/login" 
           target="_blank"
           rel="noreferrer"
           className="w-full sm:w-auto inline-flex justify-center items-center space-x-2 bg-primary text-white px-8 py-3 rounded-xl font-medium hover:bg-primary-dark transition-colors shadow-sm"
         >
-          <span>Truy cập Markee Chat</span>
+          <span>Mở Markee Chat</span>
           <ArrowRight className="w-5 h-5" />
         </a>
         
@@ -84,6 +104,10 @@ function SuccessContent() {
           Quay lại trang chủ
         </a>
       </div>
+
+      <p className="mt-8 text-sm text-text-muted">
+        Nếu cần hỗ trợ gấp, vui lòng liên hệ hotline <span className="font-semibold text-foreground">0765 055 708</span> hoặc mở <span className="font-semibold text-foreground">Markee AI</span>.
+      </p>
     </div>
   );
 }

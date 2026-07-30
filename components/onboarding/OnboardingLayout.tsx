@@ -47,14 +47,14 @@ export const OnboardingLayout: React.FC<OnboardingLayoutProps> = ({ children, cu
               }}
               className="text-xs md:text-sm font-medium text-white bg-primary hover:bg-primary-dark transition-colors px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg shadow-sm flex items-center gap-2"
             >
-              Chat với bot
+              Chat với Markee AI
             </button>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="relative flex-1 z-10 mx-auto w-full max-w-[1560px] px-5 lg:px-8 2xl:px-10 py-8 lg:py-12">
+      <main className="relative flex-1 z-10 mx-auto w-full max-w-[1280px] px-5 lg:px-8 2xl:px-10 py-8 lg:py-12">
         <div className="grid items-start gap-6 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 xl:gap-10">
           {/* Sidebar for Desktop */}
           <aside className="hidden lg:block relative z-20">
@@ -67,7 +67,7 @@ export const OnboardingLayout: React.FC<OnboardingLayoutProps> = ({ children, cu
           </div>
 
           {/* Form Content */}
-          <div id="form-content-top" className="min-w-0 relative z-20 w-full">
+          <div id="form-content-top" className="min-w-0 relative z-20 w-full max-w-[880px]">
             <div className="w-full rounded-[24px] border border-border-color bg-white p-6 md:p-10 lg:p-12 shadow-sm min-h-[480px] flex flex-col relative overflow-hidden">
               {children}
             </div>
