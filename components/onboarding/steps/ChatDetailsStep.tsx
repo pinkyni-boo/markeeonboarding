@@ -18,6 +18,7 @@ const CardWrapper: React.FC<{ title: string, children: React.ReactNode }> = ({ t
 export const ChatDetailsStep: React.FC = () => {
   const { register, watch, formState: { errors } } = useFormContext<OnboardingFormValues>();
   const selectedChat = watch('productData.markeeChat.channels.chat') || [];
+  const errs = errors.productData?.markeeChat?.channelDetails?.chat;
 
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-300">
@@ -26,93 +27,99 @@ export const ChatDetailsStep: React.FC = () => {
       
       {selectedChat.includes('facebookMessenger') && (
         <CardWrapper title="Facebook Messenger">
-          <FormField label="Tên Fanpage" required {...register('productData.markeeChat.channelDetails.chat.facebookMessenger.pageName')} />
-          <FormField label="Link Fanpage" required {...register('productData.markeeChat.channelDetails.chat.facebookMessenger.pageLink')} />
-          <FormField label="Người giữ quyền Admin" {...register('productData.markeeChat.channelDetails.chat.facebookMessenger.adminName')} />
-          <div>
+          <FormField label="Tên Fanpage" required {...register('productData.markeeChat.channelDetails.chat.facebookMessenger.pageName')} error={errs?.facebookMessenger?.pageName?.message} />
+          <FormField label="Link Fanpage" required {...register('productData.markeeChat.channelDetails.chat.facebookMessenger.pageLink')} error={errs?.facebookMessenger?.pageLink?.message} />
+          <FormField label="Người giữ quyền Admin" {...register('productData.markeeChat.channelDetails.chat.facebookMessenger.adminName')} error={errs?.facebookMessenger?.adminName?.message} />
+          <div className="mb-5">
             <label className="block text-sm font-medium text-foreground mb-2">Hiện có quyền Admin hay không?</label>
-            <select className="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white" {...register('productData.markeeChat.channelDetails.chat.facebookMessenger.hasAdminAccess')}>
+            <select className={`w-full px-4 py-2.5 rounded-xl border bg-white ${errs?.facebookMessenger?.hasAdminAccess ? 'border-red-500 focus:ring-red-500/10' : 'border-slate-300'}`} {...register('productData.markeeChat.channelDetails.chat.facebookMessenger.hasAdminAccess')}>
               <option value="">Chọn...</option>
               <option value="yes">Có</option>
               <option value="no">Không</option>
               <option value="undecided">Chưa xác định</option>
             </select>
+            {errs?.facebookMessenger?.hasAdminAccess?.message && (
+              <p className="mt-2 text-sm text-red-500">{errs.facebookMessenger.hasAdminAccess.message}</p>
+            )}
           </div>
         </CardWrapper>
       )}
 
       {selectedChat.includes('instagram') && (
         <CardWrapper title="Instagram">
-          <FormField label="Tên tài khoản Instagram" required {...register('productData.markeeChat.channelDetails.chat.instagram.accountName')} />
-          <FormField label="Link tài khoản" required {...register('productData.markeeChat.channelDetails.chat.instagram.accountLink')} />
-          <FormField label="Người quản lý tài khoản" {...register('productData.markeeChat.channelDetails.chat.instagram.managerName')} />
-          <div>
+          <FormField label="Tên tài khoản Instagram" required {...register('productData.markeeChat.channelDetails.chat.instagram.accountName')} error={errs?.instagram?.accountName?.message} />
+          <FormField label="Link tài khoản" required {...register('productData.markeeChat.channelDetails.chat.instagram.accountLink')} error={errs?.instagram?.accountLink?.message} />
+          <FormField label="Người quản lý tài khoản" {...register('productData.markeeChat.channelDetails.chat.instagram.managerName')} error={errs?.instagram?.managerName?.message} />
+          <div className="mb-5">
             <label className="block text-sm font-medium text-foreground mb-2">Đã liên kết với Fanpage chưa?</label>
-            <select className="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white" {...register('productData.markeeChat.channelDetails.chat.instagram.linkedToFacebook')}>
+            <select className={`w-full px-4 py-2.5 rounded-xl border bg-white ${errs?.instagram?.linkedToFacebook ? 'border-red-500 focus:ring-red-500/10' : 'border-slate-300'}`} {...register('productData.markeeChat.channelDetails.chat.instagram.linkedToFacebook')}>
               <option value="">Chọn...</option>
               <option value="yes">Có</option>
               <option value="no">Không</option>
               <option value="undecided">Chưa xác định</option>
             </select>
+            {errs?.instagram?.linkedToFacebook?.message && (
+              <p className="mt-2 text-sm text-red-500">{errs.instagram.linkedToFacebook.message}</p>
+            )}
           </div>
         </CardWrapper>
       )}
 
       {selectedChat.includes('zaloOA') && (
         <CardWrapper title="Zalo OA">
-          <FormField label="Tên Zalo OA" required {...register('productData.markeeChat.channelDetails.chat.zaloOA.oaName')} />
-          <FormField label="OA ID" required {...register('productData.markeeChat.channelDetails.chat.zaloOA.oaId')} />
-          <FormField label="Người quản trị" {...register('productData.markeeChat.channelDetails.chat.zaloOA.adminName')} />
-          <FormField label="Số điện thoại quản trị" {...register('productData.markeeChat.channelDetails.chat.zaloOA.adminPhone')} />
+          <FormField label="Tên Zalo OA" required {...register('productData.markeeChat.channelDetails.chat.zaloOA.oaName')} error={errs?.zaloOA?.oaName?.message} />
+          <FormField label="OA ID" required {...register('productData.markeeChat.channelDetails.chat.zaloOA.oaId')} error={errs?.zaloOA?.oaId?.message} />
+          <FormField label="Người quản trị" {...register('productData.markeeChat.channelDetails.chat.zaloOA.adminName')} error={errs?.zaloOA?.adminName?.message} />
+          <FormField label="Số điện thoại quản trị" {...register('productData.markeeChat.channelDetails.chat.zaloOA.adminPhone')} error={errs?.zaloOA?.adminPhone?.message} />
         </CardWrapper>
       )}
 
       {selectedChat.includes('zaloPersonal') && (
         <CardWrapper title="Zalo Cá Nhân">
-          <FormField label="Tên tài khoản" required {...register('productData.markeeChat.channelDetails.chat.zaloPersonal.accountName')} />
-          <FormField label="Số điện thoại" required {...register('productData.markeeChat.channelDetails.chat.zaloPersonal.phone')} />
+          <FormField label="Tên tài khoản" required {...register('productData.markeeChat.channelDetails.chat.zaloPersonal.accountName')} error={errs?.zaloPersonal?.accountName?.message} />
+          <FormField label="Số điện thoại" required {...register('productData.markeeChat.channelDetails.chat.zaloPersonal.phone')} error={errs?.zaloPersonal?.phone?.message} />
           <div className="md:col-span-2">
-            <FormField label="Người sử dụng chính" {...register('productData.markeeChat.channelDetails.chat.zaloPersonal.mainUser')} />
+            <FormField label="Người sử dụng chính" {...register('productData.markeeChat.channelDetails.chat.zaloPersonal.mainUser')} error={errs?.zaloPersonal?.mainUser?.message} />
           </div>
         </CardWrapper>
       )}
 
       {selectedChat.includes('telegram') && (
         <CardWrapper title="Telegram">
-          <FormField label="Tên bot hoặc group" required {...register('productData.markeeChat.channelDetails.chat.telegram.botOrGroupName')} />
-          <FormField label="Link bot hoặc group" required {...register('productData.markeeChat.channelDetails.chat.telegram.link')} />
+          <FormField label="Tên bot hoặc group" required {...register('productData.markeeChat.channelDetails.chat.telegram.botOrGroupName')} error={errs?.telegram?.botOrGroupName?.message} />
+          <FormField label="Link bot hoặc group" required {...register('productData.markeeChat.channelDetails.chat.telegram.link')} error={errs?.telegram?.link?.message} />
           <div className="md:col-span-2">
-            <FormField label="Người quản trị" {...register('productData.markeeChat.channelDetails.chat.telegram.adminName')} />
+            <FormField label="Người quản trị" {...register('productData.markeeChat.channelDetails.chat.telegram.adminName')} error={errs?.telegram?.adminName?.message} />
           </div>
         </CardWrapper>
       )}
 
       {selectedChat.includes('whatsapp') && (
         <CardWrapper title="WhatsApp">
-          <FormField label="Tên tài khoản doanh nghiệp" required {...register('productData.markeeChat.channelDetails.chat.whatsapp.businessName')} />
-          <FormField label="Số điện thoại" required {...register('productData.markeeChat.channelDetails.chat.whatsapp.phone')} />
+          <FormField label="Tên tài khoản doanh nghiệp" required {...register('productData.markeeChat.channelDetails.chat.whatsapp.businessName')} error={errs?.whatsapp?.businessName?.message} />
+          <FormField label="Số điện thoại" required {...register('productData.markeeChat.channelDetails.chat.whatsapp.phone')} error={errs?.whatsapp?.phone?.message} />
           <div className="md:col-span-2">
-            <FormField label="Người quản trị" {...register('productData.markeeChat.channelDetails.chat.whatsapp.adminName')} />
+            <FormField label="Người quản trị" {...register('productData.markeeChat.channelDetails.chat.whatsapp.adminName')} error={errs?.whatsapp?.adminName?.message} />
           </div>
         </CardWrapper>
       )}
 
       {selectedChat.includes('websiteLiveChat') && (
         <CardWrapper title="Website Live Chat">
-          <FormField label="Domain website" required {...register('productData.markeeChat.channelDetails.chat.websiteLiveChat.domain')} />
-          <FormField label="Nền tảng website (VD: WordPress, Haravan...)" required {...register('productData.markeeChat.channelDetails.chat.websiteLiveChat.platform')} />
+          <FormField label="Domain website" required {...register('productData.markeeChat.channelDetails.chat.websiteLiveChat.domain')} error={errs?.websiteLiveChat?.domain?.message} />
+          <FormField label="Nền tảng website (VD: WordPress, Haravan...)" required {...register('productData.markeeChat.channelDetails.chat.websiteLiveChat.platform')} error={errs?.websiteLiveChat?.platform?.message} />
           <div className="md:col-span-2">
-            <FormField label="Người quản trị website" {...register('productData.markeeChat.channelDetails.chat.websiteLiveChat.adminName')} />
+            <FormField label="Người quản trị website" {...register('productData.markeeChat.channelDetails.chat.websiteLiveChat.adminName')} error={errs?.websiteLiveChat?.adminName?.message} />
           </div>
         </CardWrapper>
       )}
 
       {selectedChat.includes('airbnb') && (
         <CardWrapper title="Airbnb">
-          <FormField label="Tên tài khoản / cơ sở lưu trú" required {...register('productData.markeeChat.channelDetails.chat.airbnb.accountName')} />
-          <FormField label="Link trang Airbnb" required {...register('productData.markeeChat.channelDetails.chat.airbnb.link')} />
+          <FormField label="Tên tài khoản / cơ sở lưu trú" required {...register('productData.markeeChat.channelDetails.chat.airbnb.accountName')} error={errs?.airbnb?.accountName?.message} />
+          <FormField label="Link trang Airbnb" required {...register('productData.markeeChat.channelDetails.chat.airbnb.link')} error={errs?.airbnb?.link?.message} />
           <div className="md:col-span-2">
-            <FormField label="Người quản lý" {...register('productData.markeeChat.channelDetails.chat.airbnb.managerName')} />
+            <FormField label="Người quản lý" {...register('productData.markeeChat.channelDetails.chat.airbnb.managerName')} error={errs?.airbnb?.managerName?.message} />
           </div>
         </CardWrapper>
       )}
