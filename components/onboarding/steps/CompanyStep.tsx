@@ -28,7 +28,7 @@ export const CompanyStep: React.FC = () => {
           label={
             <div className="flex items-center gap-2">
               <span>Tên thương hiệu</span>
-              <span className="text-[10px] font-semibold bg-slate-100 text-slate-500 uppercase tracking-wider px-1.5 py-0.5 rounded">(Kh�ng b?t bu?c)</span>
+              <span className="text-[10px] font-semibold bg-slate-100 text-slate-500 uppercase tracking-wider px-1.5 py-0.5 rounded">(Không bắt buộc)</span>
             </div>
           }
           placeholder="Ví dụ: Markee"
@@ -68,7 +68,7 @@ export const CompanyStep: React.FC = () => {
           label={
             <div className="flex items-center gap-2">
               <span>Website</span>
-              <span className="text-[10px] font-semibold bg-slate-100 text-slate-500 uppercase tracking-wider px-1.5 py-0.5 rounded">(Kh�ng b?t bu?c)</span>
+              <span className="text-[10px] font-semibold bg-slate-100 text-slate-500 uppercase tracking-wider px-1.5 py-0.5 rounded">(Không bắt buộc)</span>
             </div>
           }
           placeholder="https://markee.com"
