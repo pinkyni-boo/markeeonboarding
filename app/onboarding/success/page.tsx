@@ -48,9 +48,29 @@ function SuccessContent() {
 export default function SuccessPage() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans flex flex-col">
-      <header className="relative z-10 border-b border-border-color bg-card">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center">
-          <img src="https://app.markeeai.com/markeeai_logo.svg" alt="Markee Logo" className="h-8" />
+      <header className="relative z-10 border-b border-border-color bg-white/80 backdrop-blur-md">
+        <div className="mx-auto flex h-[72px] w-full max-w-[1560px] items-center justify-between px-5 lg:px-8 2xl:px-10">
+          <div className="flex items-center gap-4">
+            <img src="https://app.markeeai.com/markeeai_logo.svg" alt="Markee Logo" className="h-8 w-auto" />
+            <span className="text-lg font-bold text-foreground hidden sm:inline-block">Markee Onboarding</span>
+            <span className="hidden md:inline-block text-sm text-text-muted border-l border-border-color pl-4 ml-2">Thiết lập thông tin triển khai</span>
+          </div>
+          
+          <div className="flex items-center gap-6">
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                if (typeof window !== 'undefined' && (window as any).MarkeeChat) {
+                  (window as any).MarkeeChat.open();
+                } else {
+                  alert('Tính năng Live Chat đang được kết nối...');
+                }
+              }}
+              className="text-sm font-medium text-white bg-primary hover:bg-primary-dark transition-colors px-5 py-2.5 rounded-lg shadow-sm flex items-center gap-2"
+            >
+              Liên hệ Markee
+            </button>
+          </div>
         </div>
       </header>
       

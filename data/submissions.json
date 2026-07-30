@@ -104,5 +104,58 @@
     },
     "createdAt": "2026-07-29T10:53:51.838+00:00",
     "updatedAt": "2026-07-29T12:07:30.357Z"
+  },
+  {
+    "id": "sub_ms79dwh2_thhhsfx",
+    "data": {
+      "company": {
+        "name": "Meo Meo",
+        "brand": "",
+        "contactName": "Thảo",
+        "email": "niorravucontact@gmail.com",
+        "phone": "0909561743",
+        "website": ""
+      },
+      "selectedProducts": [
+        "markeeChat"
+      ],
+      "productData": {
+        "markeeChat": {
+          "channels": {
+            "chat": [
+              "facebookMessenger"
+            ],
+            "sales": []
+          },
+          "channelDetails": {
+            "chat": {
+              "facebookMessenger": {
+                "pageName": "meo",
+                "pageLink": "meo",
+                "adminName": "Thảo",
+                "hasAdminAccess": "yes"
+              }
+            }
+          }
+        }
+      },
+      "staff": [],
+      "deploymentSchedule": {
+        "supportMethods": [
+          "googleMeet"
+        ],
+        "preferredDate": "2026-07-30",
+        "preferredTimeSlot": "morning",
+        "participants": "thảo",
+        "note": ""
+      },
+      "additionalNotes": "",
+      "review": {
+        "confirmed": true
+      }
+    },
+    "status": "new",
+    "createdAt": "2026-07-30T08:35:43.911Z",
+    "updatedAt": "2026-07-30T08:35:43.911Z"
   }
 ]
