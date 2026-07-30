@@ -37,8 +37,8 @@ export const ChannelsStep: React.FC = () => {
 
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-      <h2 className="text-xl font-semibold text-foreground mb-2">Chọn các kênh cần tích hợp</h2>
-      <p className="text-text-muted mb-6">Bạn có thể chọn nhiều nền tảng thuộc các nhóm khác nhau.</p>
+      <h2 className="text-xl font-semibold text-foreground mb-2">Chọn các kênh cần tích hợp <span className="text-sm font-normal text-slate-500">(Không bắt buộc)</span></h2>
+      <p className="text-text-muted mb-6">Bạn có thể chọn nhiều nền tảng thuộc các nhóm khác nhau, hoặc để trống và cung cấp sau.</p>
       
       {errors.productData?.markeeChat?.channels?.chat && (
         <div className="mb-6 p-4 bg-red-50 text-red-500 border border-red-200 rounded-xl text-sm">

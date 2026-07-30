@@ -21,7 +21,8 @@ export const SalesDetailsStep: React.FC = () => {
 
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-      <h2 className="text-xl font-semibold text-foreground mb-6">Thông tin kênh Bán hàng</h2>
+      <h2 className="text-xl font-semibold text-foreground mb-2">Chi tiết Kênh Bán hàng <span className="text-sm font-normal text-slate-500">(Không bắt buộc)</span></h2>
+      <p className="text-text-muted mb-8">Vui lòng cung cấp thêm thông tin cho các kênh bạn đã chọn, hoặc để trống và bổ sung sau.</p>
       
       {selectedSales.includes('shopee') && (
         <CardWrapper title="Shopee">

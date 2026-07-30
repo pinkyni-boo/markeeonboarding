@@ -24,12 +24,6 @@ export const channelsSchema = z.object({
   chat: z.array(z.string()).optional(),
   sales: z.array(z.string()).optional(),
   ads: z.array(z.string()).optional(),
-}).refine((data) => {
-  const total = (data.chat?.length || 0) + (data.sales?.length || 0) + (data.ads?.length || 0);
-  return total > 0;
-}, {
-  message: 'Vui lòng chọn ít nhất một kênh để tích hợp',
-  path: ['chat'],
 });
 
 export const channelDetailsSchema = z.object({

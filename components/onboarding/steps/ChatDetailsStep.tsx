@@ -21,7 +21,8 @@ export const ChatDetailsStep: React.FC = () => {
 
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-      <h2 className="text-xl font-semibold text-foreground mb-6">Thông tin kênh Chat</h2>
+      <h2 className="text-xl font-semibold text-foreground mb-2">Chi tiết Kênh Chat <span className="text-sm font-normal text-slate-500">(Không bắt buộc)</span></h2>
+      <p className="text-text-muted mb-8">Vui lòng cung cấp thêm thông tin cho các kênh bạn đã chọn, hoặc để trống và bổ sung sau.</p>
       
       {selectedChat.includes('facebookMessenger') && (
         <CardWrapper title="Facebook Messenger">

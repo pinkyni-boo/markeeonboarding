@@ -109,12 +109,19 @@ export const ProgressSidebar: React.FC<ProgressSidebarProps> = ({ currentStepInd
             <p className="text-xs text-text-muted mb-4">
               Đội ngũ Markee luôn sẵn sàng hỗ trợ bạn trong quá trình thiết lập.
             </p>
-            <a 
-              href="mailto:support@markeeai.com"
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                if (typeof window !== 'undefined' && (window as any).MarkeeChat) {
+                  (window as any).MarkeeChat.open();
+                } else {
+                  alert('Tính năng Live Chat đang được kết nối...');
+                }
+              }}
               className="block w-full text-center py-2 px-4 rounded-lg border border-primary/20 text-primary bg-white text-sm font-medium hover:bg-primary-light transition-colors"
             >
               Liên hệ ngay
-            </a>
+            </button>
           </div>
         )}
       </div>

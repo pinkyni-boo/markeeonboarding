@@ -23,23 +23,17 @@ export const StaffingStep: React.FC = () => {
 
   const selectedProducts = watch('selectedProducts') || [];
 
-  useEffect(() => {
-    if (fields.length === 0) {
-      append({ id: crypto.randomUUID(), name: '', email: '', role: 'Admin', product: selectedProducts[0] || '', channels: '' });
-    }
-  }, [fields.length, append, selectedProducts]);
-
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-300">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-xl font-semibold text-slate-900 mb-1">Nhân sự sử dụng</h2>
-          <p className="text-slate-500 text-sm">Vui lòng cung cấp danh sách nhân sự dự kiến sẽ sử dụng hệ thống Markee.</p>
+          <h2 className="text-xl font-semibold text-slate-900 mb-1">Nhân sự sử dụng <span className="text-sm font-normal text-slate-500">(Không bắt buộc)</span></h2>
+          <p className="text-slate-500 text-sm">Cung cấp danh sách nhân sự nếu bạn đã có sẵn, hoặc có thể thiết lập sau.</p>
         </div>
         <button
           type="button"
           onClick={() => append({ id: crypto.randomUUID(), name: '', email: '', role: 'Sale', product: selectedProducts[0] || '', channels: '' })}
-          className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-2 bg-primary/10 text-primary hover:bg-primary/20 rounded-lg text-sm font-medium transition-colors whitespace-nowrap shrink-0"
+          className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-2 bg-primary text-white hover:bg-primary-hover rounded-lg text-sm font-medium transition-colors whitespace-nowrap shrink-0 shadow-sm"
         >
           <Plus className="w-4 h-4" />
           <span className="hidden sm:inline">Thêm nhân sự</span>
@@ -48,14 +42,30 @@ export const StaffingStep: React.FC = () => {
       </div>
       
       <div className="space-y-4">
-        <div className="hidden md:grid md:grid-cols-12 gap-4 px-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">
-          <div className="col-span-3">Họ và tên *</div>
-          <div className="col-span-3">Email</div>
-          <div className="col-span-2">Vai trò *</div>
-          <div className="col-span-2">Sản phẩm phụ trách</div>
-          <div className="col-span-1">Kênh</div>
-          <div className="col-span-1 text-center">Xóa</div>
-        </div>
+        {fields.length > 0 && (
+          <div className="hidden md:grid md:grid-cols-12 gap-4 px-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            <div className="col-span-3">Họ và tên *</div>
+            <div className="col-span-3">Email</div>
+            <div className="col-span-2">Vai trò *</div>
+            <div className="col-span-2">Sản phẩm phụ trách</div>
+            <div className="col-span-1">Kênh</div>
+            <div className="col-span-1 text-center">Xóa</div>
+          </div>
+        )}
+
+        {fields.length === 0 && (
+          <div className="p-8 text-center border-2 border-dashed border-slate-200 rounded-xl bg-slate-50/50">
+            <p className="text-slate-500 mb-4">Bạn chưa thêm nhân sự nào. Có thể bấm <strong>Bỏ qua / Tiếp tục</strong> để sang bước sau.</p>
+            <button
+              type="button"
+              onClick={() => append({ id: crypto.randomUUID(), name: '', email: '', role: 'Admin', product: selectedProducts[0] || '', channels: '' })}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg text-sm font-medium transition-colors shadow-sm"
+            >
+              <Plus className="w-4 h-4" />
+              Thêm nhân sự đầu tiên
+            </button>
+          </div>
+        )}
 
         {fields.map((item, index) => (
           <div key={item.id} className="grid grid-cols-1 md:grid-cols-12 gap-4 items-start p-4 md:p-0 md:px-4 bg-slate-50 border border-slate-200 md:border-transparent md:bg-transparent rounded-xl md:rounded-none">

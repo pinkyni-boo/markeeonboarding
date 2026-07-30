@@ -30,12 +30,19 @@ export const OnboardingLayout: React.FC<OnboardingLayoutProps> = ({ children, cu
               <HelpCircle className="w-4 h-4" />
               <span>Cần hỗ trợ?</span>
             </div>
-            <a 
-              href="mailto:support@markeeai.com"
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                if (typeof window !== 'undefined' && (window as any).MarkeeChat) {
+                  (window as any).MarkeeChat.open();
+                } else {
+                  alert('Tính năng Live Chat đang được kết nối...');
+                }
+              }}
               className="text-sm font-medium text-white bg-primary hover:bg-primary-dark transition-colors px-5 py-2.5 rounded-lg shadow-sm flex items-center gap-2"
             >
               Liên hệ Markee
-            </a>
+            </button>
           </div>
         </div>
       </header>
